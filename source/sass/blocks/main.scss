@@ -1,0 +1,134 @@
+.main {
+  // min-height: 100vh;
+  min-height: 878px;
+  padding-top: 316px;
+  background-color: $dark;
+  background-image: url(../img/waves-desk.png), url(../img/bg-desk.png), url(../img/pcb-desk.png);
+  background-repeat: no-repeat;
+  background-size: cover, cover, 705px 515px;
+  background-position: center, center, 86% 60%;
+  color: $white;
+
+  @media (max-width: $desktop) {
+    padding-top: 187px;
+    min-height: 686px;
+    // background-image: url(../img/waves-tab.png), url(../img/bg-tab.png), url(../img/pcb-tab.png);
+    // background-size: cover, cover, 465px 300px;
+    // background-position: center, center, center; бесит
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 285px;
+    min-height: 646px;
+  }
+}
+
+.main__container {
+  position: relative;
+}
+
+.main__layout {
+  max-width: 54%;
+  margin-right: auto;
+
+  @media (max-width: $desktop) {
+    max-width: 68%;
+  }
+
+  @media (max-width: $tablet) {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+.main h2 {
+  @include font(80px, 94px, 700);
+  @include fields();
+  margin-bottom: 26px;
+  font-family: $roboto;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+
+  @media (max-width: $desktop) {
+    @include font(60px, 70px, 700);
+  }
+
+  @media (max-width: $tablet) {
+    @include font(40px, 47px, 700);
+  }
+}
+
+.main p {
+  @include font(22px, 34px, 400);
+  @include fields();
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: $main-pad-left;
+  font-family: $font;
+
+  &::before {
+    @include pseudo();
+    left: 2px;
+    top: 15px;
+    width: 66px;
+    height: 2px;
+    background-color: $white;
+  }
+
+  @media (max-width: $desktop) {
+    @include font(18px, 156%, 400);
+
+    &::before {
+      width: 33px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    @include font(16px, 156%, 400);
+  }
+}
+
+.main__button {
+  @include button();
+  @include font(16px, 19px, 700);
+  padding: 17px 45px;
+  margin-left: $main-pad-left;
+  margin-bottom: 186px;
+  background-color: $accent;
+  font-family: $roboto;
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+
+  &--mobile {
+    display: none;
+  }
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    margin: 0;
+    padding: 17px 25px;
+
+    &--mobile {
+      display: block;
+    }
+
+    &--desk {
+      display: none;
+    }
+  }
+}
+
+.main__link {
+  @include a();
+  @include font(14px, 16px, 400);
+  position: absolute;
+  left: -10px;
+  bottom: 36px;
+  opacity: 0.5;
+  text-align: left;
+  transform: rotate(-90deg);
+
+  @media (max-width: $desktop) {
+    display: none;
+  }
+}

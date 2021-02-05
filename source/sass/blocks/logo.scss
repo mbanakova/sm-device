@@ -1,0 +1,20 @@
+.logo {
+  display: flex;
+}
+
+.logo svg {
+  @media (max-width: $tablet) {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.logo__text {
+  margin-left: 17px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}

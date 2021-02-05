@@ -24,30 +24,30 @@
 }
 
 @mixin mobile() {
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 0 14px;
 }
 
 @mixin tablet() {
-  width: 766px;
+  min-width: 767px;
   margin: 0 auto;
-  padding: 0 21px;
+  padding: 0 24px 0 25px;
 }
 
 @mixin desktop() {
-  width: 1024px;
+  max-width: 1454px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 @mixin button() {
-  @include font(15px, 21px, 600);
+  @include font(16px, 19px, 700);
   padding: 15px 20px;
   border: none;
   font-family: $font;
-  color: $black;
-  background-color: $accent;
+  color: inherit;
+  text-transform: uppercase;
   cursor: pointer;
 }
 

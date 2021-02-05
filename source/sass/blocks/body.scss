@@ -1,8 +1,8 @@
 body {
   @include font();
-  @include fields();
   position: relative;
   margin: 0 auto;
+  padding: 0;
   color: $dark;
   font-family: $font;
   overflow-x: hidden;

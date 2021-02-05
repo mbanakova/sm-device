@@ -1,0 +1,11 @@
+.container {
+  @include desktop();
+
+  @media (max-width: $desktop) {
+    @include tablet();
+  }
+
+  @media (max-width: $tablet) {
+    @include mobile();
+  }
+}
