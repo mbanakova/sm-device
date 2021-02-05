@@ -1,0 +1,37 @@
+.social {
+  @include ul();
+  display: flex;
+}
+
+.social__item {
+  margin-right: 16px;
+  width: 27px;
+  height: 27px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.social__link svg {
+  fill: $light-gray;
+}
+
+.social__link {
+  &:hover svg {
+    fill: $accent;
+    transition: $tr;
+  }
+
+  &:active {
+    opacity: 0.6;
+    transition: $tr;
+  }
+
+  @media (max-width: $desktop) {
+    &:active {
+      fill: $accent;
+      transition: $tr;
+    }
+  }
+}

@@ -36,10 +36,10 @@
         </li>
         <li class="header__contacts-item">
           <a class="header__contacts-link" href="tel:+74950005252" aria-label="Телефон компании">
-          <svg width="18" height="18" role="img" aria-label="Телефон">
-            <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
-          </svg>
-          <span>+7 (495) 000-52-52</span></a>
+            <svg width="18" height="18" role="img" aria-label="Телефон">
+              <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
+            </svg>
+            <span>+7 (495) 000-52-52</span></a>
         </li>
       </ul>
       <button class="header__button" type="button">Заказать звонок</button>
@@ -52,13 +52,13 @@
         <div class="main__layout">
           <h2 class="section-title">Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-          <button class="main__button main__button--desk" type="button">Получить бесплатную консультацию</button>
-          <button class="main__button main__button--mobile" type="button">Бесплатная консультация</button>
-          <a class="main__link" href="#">Скролл вниз</a>
+          <a class="main__button main__button--desk" href="#form">Получить бесплатную консультацию</a>
+          <a class="main__button main__button--mobile" href="#form">Бесплатная консультация</a>
+          <a class="main__link" href="#features">Скролл вниз</a>
         </div>
       </div>
     </section>
-    <section class="features">
+    <section class="features" id="features">
       <div class="container">
         <h2 class="section-title">Наши преимущества</h2>
         <ul>
@@ -116,7 +116,7 @@
         </ul>
       </div>
     </section>
-    <section class="form">
+    <section class="form" id="form">
       <div class="container">
         <h2 class="section-title">Остались вопросы? Задайте их нам!</h2>
         <p>Мы проконсультируем Вас бесплатно</p>
@@ -134,62 +134,72 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="container">
+    <div class="container footer__container">
       <div class="footer__top">
-        <a href=""><svg width="52" height="52" role="img" aria-label="Логотип">
-            <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
-          </svg>
-          <svg width="148" height="30" role="img" aria-label="Название">
-            <use xlink:href="img/sprite_auto.svg#icon-logo-service"></use>
-          </svg>
-          <svg width="106" height="15" role="img" aria-label="Название">
-            <use xlink:href="img/sprite_auto.svg#icon-text"></use>
-          </svg></a>
-        <ul>
-          <li><a href="#" class="footer__social" aria-label="Facebook">
-              <svg width="27" height="27" role="img">
-                <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+        <div class="footer__wrapper">
+          <a class="logo footer__logo" href="">
+            <svg width="52" height="52" role="img" aria-label="Логотип">
+              <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+            </svg>
+            <div class="logo__text">
+              <svg width="148" height="30" role="img" aria-label="Название">
+                <use xlink:href="img/sprite_auto.svg#icon-logo-service"></use>
               </svg>
-            </a></li>
-          <li><a href="#" class="footer__social" aria-label="Одноклассники"><svg width="27" height="27" role="img">
-                <use xlink:href="img/sprite_auto.svg#icon-ok"></use>
-              </svg></a></li>
-          <li><a href="#" class="footer__social" aria-label="Вконтакте"><svg width="27" height="27" role="img">
-                <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
-              </svg></a></li>
-        </ul>
-        <div class="footer__accordion">
-          <div class="footer__site-nav">
-            <input type="checkbox" name="site-nav" id="site-nav">
-            <label for="site-nav">Разделы сайта</label>
-            <ul>
-              <li><a href="#">О компании</a></li>
-              <li><a href="#">Продукты</a></li>
-              <li><a href="#">Производство печатных плат</a></li>
-              <li><a href="#">Монтаж печатных плат</a></li>
-              <li><a href="#">Комплектующие</a></li>
-              <li><a href="#">Доставка</a></li>
-              <li><a href="#">Контакты</a></li>
+              <svg width="106" height="15" role="img" aria-label="Название">
+                <use xlink:href="img/sprite_auto.svg#icon-text"></use>
+              </svg>
+            </div>
+          </a>
+          <a class="footer__link footer__link--sd" href="#">1999-2018 SD Service Devices</a>
+          <ul class="footer__social social">
+            <li class="social__item"><a href="#" class="social__link" aria-label="Facebook">
+                <svg width="27" height="27" role="img">
+                  <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+                </svg>
+              </a></li>
+            <li class="social__item"><a href="#" class="social__link" aria-label="Одноклассники"><svg width="27" height="27" role="img">
+                  <use xlink:href="img/sprite_auto.svg#icon-ok"></use>
+                </svg></a></li>
+            <li class="social__item"><a href="#" class="social__link" aria-label="Вконтакте"><svg width="27" height="27" role="img">
+                  <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <div class="footer__accordion accordion">
+          <div class="accordion__site-nav">
+            <input class="accordion__input" type="checkbox" name="site-nav" id="site-nav" checked>
+            <label class="accordion__label" for="site-nav">Разделы сайта</label>
+            <div class="accordion__ul-wrapper">
+            <ul class="accordion__list">
+              <li><a class="accordion__link" href="#">О компании</a></li>
+              <li><a class="accordion__link" href="#">Продукты</a></li>
+              <li><a class="accordion__link" href="#">Производство печатных плат</a></li>
+              <li><a class="accordion__link" href="#">Монтаж печатных плат</a></li>
             </ul>
+            <ul class="accordion__list">
+              <li><a class="accordion__link" href="#">Комплектующие</a></li>
+              <li><a class="accordion__link" href="#">Доставка</a></li>
+              <li><a class="accordion__link" href="#">Контакты</a></li>
+            </ul></div>
           </div>
-          <div class="footer__contacts">
-            <input type="checkbox" name="contacts" id="contacts">
-            <label for="contacts">Наш офис</label>
-            <ul>
-              <li><a href="#">г. Мытищи, Олимпийский проспект, д.10</a></li>
-              <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
-              <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
-              <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
+          <div class="accordion__contacts">
+            <input class="accordion__input" type="checkbox" name="contacts" id="contacts">
+            <label class="accordion__label" for="contacts">Наш офис</label>
+            <ul class="accordion__list">
+              <li><a class="accordion__link" href="#">г. Мытищи, Олимпийский проспект, д.10</a></li>
+              <li><a class="accordion__link" href="tel:+74955894050">+7 (495) 589-40-50</a></li>
+              <li><a class="accordion__link" href="tel:+79250038767">+7 (925) 003-87-67</a></li>
+              <li><a class="accordion__link" href="tel:+792692608079">+7 (926) 926-080-79</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <ul>
-          <li><a href="#">Все права защищены</a></li>
-          <li><a href="#">1999-2018 SD Service Devices</a></li>
-          <li><a href="#">Условия конфиденциальности</a></li>
-          <li><a href="#">Developed by WOW studio</a></li>
+        <ul class="footer__legacy">
+          <li class="footer__bottom-item footer__bottom-item--rights"><a class="footer__link footer__link" href="#">Все права защищены</a></li>
+          <li class="footer__bottom-item footer__bottom-item--sd-bottom"><a class="footer__link footer__link" href="#">1999-2018 SD Service Devices</a></li>
+          <li class="footer__bottom-item"><a class="footer__link" href="#">Условия конфиденциальности</a></li>
+          <li class="footer__bottom-item"><a class="footer__link" href="#">Developed by WOW studio</a></li>
         </ul>
       </div>
     </div>
@@ -199,13 +209,13 @@
     <h2 class="section-title">Закажите звонок</h2>
     <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
     <form action="https://echo.htmlacademy.ru" method="POST">
-      <input type="text" name="username" id="username">
+      <input type="text" name="user-name" id="user-name">
       <label for="username"></label>
-      <input type="tel" name="userphone" id="userphone">
+      <input type="tel" name="user-phone" id="user-phone">
       <label for="userphone"></label>
-      <textarea name="textarea" id="textarea">Ваш вопрос</textarea>
-      <input type="checkbox" name="confirm" id="confirm">
-      <label for="confirm">Я согласен на обработку персональных данных</label>
+      <textarea name="text-area" id="text-area">Ваш вопрос</textarea>
+      <input type="checkbox" name="agree" id="agree">
+      <label for="agree">Я согласен на обработку персональных данных</label>
       <button type="submit">Задать вопрос</button>
     </form>
   </section>

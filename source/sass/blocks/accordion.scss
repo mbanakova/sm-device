@@ -1,0 +1,133 @@
+.accordion {
+  display: flex;
+  justify-content: space-between;
+
+  // @media (max-width: $desktop) {
+
+  // }
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+
+.accordion__site-nav {
+  margin-right: 140px;
+
+  @media (max-width: $desktop) {
+    margin-right: 0;
+  }
+
+  // @media (max-width: $tablet) {
+
+  // }
+}
+
+.accordion__input {
+  appearance: none;
+  position: absolute;
+}
+
+.accordion__label {
+  @include font(15px, 16px, 400);
+  text-transform: uppercase;
+  font-family: $roboto;
+  letter-spacing: 0.05em;
+
+  @media (max-width: $tablet) {
+    padding: 28px 60px 28px 0;
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      @include pseudo();
+      width: 16px;
+      height: 2px;
+      top: 50%;
+      right: 0;
+      background-color: rgba($black, 0.2);
+      transform: translate(-50%);
+      box-shadow: none;
+    }
+
+    &::after {
+      @include pseudo();
+      width: 2px;
+      height: 16px;
+      top: 50%;
+      right: 15px;
+      background-color: rgba($black, 0.2);
+      transform: translateY(-45%);
+    }
+
+    &:active {
+      color: $accent;
+      transition: $tr;
+
+      &::before,
+      &::after {
+        background-color: $accent;
+        transition: $tr;
+      }
+    }
+  }
+}
+
+.accordion__ul-wrapper {
+  display: flex;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.accordion__list {
+  @include ul();
+  display: flex;
+  flex-direction: column;
+  margin-right: 65px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.accordion__input:checked ~ .accordion__list--wrapper {
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.accordion__input:checked ~ .accordion__list {
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.accordion__link {
+  @include a();
+  @include font(15px, 26px, 400);
+  text-align: left;
+  letter-spacing: 0.03em;
+  opacity: 0.5;
+
+  &:hover {
+    color: $accent;
+    opacity: 1;
+    transition: $tr;
+  }
+
+  &:active {
+    opacity: 0.5;
+    transition: $tr;
+  }
+}

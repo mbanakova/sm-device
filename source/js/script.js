@@ -13,5 +13,3 @@
 //     pageHeader.classList.remove('page-header--opened');
 //   }
 // });
-
-

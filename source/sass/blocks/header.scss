@@ -62,6 +62,23 @@
   }
 }
 
+.header__contacts-link:hover span {
+  color: $accent;
+  transition: $tr;
+}
+
+.header__contacts-link:active span {
+  color: rgba($accent, 0.5);
+  transition: $tr;
+}
+
+
+.header__contacts-link:active svg {
+  @media (max-width: $desktop) {
+    stroke: $white;
+  }
+}
+
 .header__button {
   @include button();
   @include font(14px, auto, 700);
@@ -72,6 +89,18 @@
   border: 1px solid $white;
   border-radius: 5px;
   flex-shrink: 0;
+
+  &:hover {
+    color: $accent;
+    border-color: $accent;
+    transition: $tr;
+  }
+
+  &:active {
+    color: rgba($accent, 0.5);
+    border-color: rgba($accent, 0.5);
+    transition: $tr;
+  }
 
   @media (max-width: $desktop) {
     display: none;

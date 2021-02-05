@@ -3,7 +3,7 @@
   min-height: 878px;
   padding-top: 316px;
   background-color: $dark;
-  background-image: url(../img/waves-desk.png), url(../img/bg-desk.png), url(../img/pcb-desk.png);
+  background-image: url("../img/waves-desk.png"), url("../img/bg-desk.png"), url("../img/pcb-desk.png");
   background-repeat: no-repeat;
   background-size: cover, cover, 705px 515px;
   background-position: center, center, 86% 60%;
@@ -30,9 +30,11 @@
 .main__layout {
   max-width: 54%;
   margin-right: auto;
+  padding-bottom: 186px;
 
   @media (max-width: $desktop) {
     max-width: 68%;
+    padding-bottom: 0;
   }
 
   @media (max-width: $tablet) {
@@ -89,18 +91,29 @@
 }
 
 .main__button {
-  @include button();
+  @include a();
   @include font(16px, 19px, 700);
   padding: 17px 45px;
   margin-left: $main-pad-left;
-  margin-bottom: 186px;
   background-color: $accent;
   font-family: $roboto;
+  text-transform: uppercase;
   border-radius: 5px;
   letter-spacing: 0.05em;
 
   &--mobile {
     display: none;
+  }
+
+  &:hover {
+    color: $accent;
+    background-color: $white;
+    transition: $tr;
+  }
+
+  &:active {
+    color: $dark;
+    transition: $tr;
   }
 
   @media (max-width: $tablet) {
@@ -124,11 +137,26 @@
   position: absolute;
   left: -10px;
   bottom: 36px;
-  opacity: 0.5;
+  color: rgba($white, 0.5);
   text-align: left;
   transform: rotate(-90deg);
 
+  &:hover {
+    color: $accent;
+    transition: $tr;
+  }
+
+  &:active {
+    color: $white;
+    transition: $tr;
+  }
+
   @media (max-width: $desktop) {
     display: none;
+
+    &:active {
+      color: $white;
+      transition: $tr;
+    }
   }
 }
