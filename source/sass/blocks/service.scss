@@ -9,6 +9,10 @@
     padding-top: 53px;
     padding-bottom: 78px;
   }
+
+  @media (max-width: $tablet) {
+    padding-bottom: 64px;
+  }
 }
 
 .service__content {
@@ -17,6 +21,10 @@
 
   @media (max-width: $desktop) {
     max-width: 720px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 290px;
   }
 }
 
@@ -29,6 +37,12 @@
     @include font(32px, 45px, 400);
     margin-bottom: 46px;
     max-width: 85%;
+  }
+
+  @media (max-width: $tablet) {
+    @include font(28px, 140%, 400);
+    max-width: auto;
+    margin-bottom: 37px;
   }
 }
 
@@ -44,6 +58,10 @@
     grid-template-columns: 1fr;
     grid-gap: 46px;
     overflow: hidden;
+  }
+
+  @media (max-width: $tablet) {
+    grid-gap: 30px;
   }
 }
 
@@ -108,10 +126,6 @@
   transform: scale(1.05);
   overflow: hidden;
   transition: 0.5s ease-in-out;
-
-  @media (max-width: $desktop) {
-
-  }
 }
 
 .service h3 {
@@ -122,6 +136,12 @@
   left: 45px;
   text-align: left;
   max-width: 50%;
+
+  @media (max-width: $tablet) {
+    top: 30px;
+    left: 25px;
+    max-width: 60%;
+  }
 }
 
 @keyframes bounce {

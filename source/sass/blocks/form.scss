@@ -2,4 +2,148 @@
   padding-top: 96px;
   padding-bottom: 113px;
   background-color: $accent;
+  color: $white;
+}
+
+.form__content {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 15px));
+  justify-content: center;
+  grid-gap: 30px;
+}
+
+.form picture {
+  margin-right: 80px;
+  margin-left: auto;
+}
+
+.form__column form {
+  display: grid;
+  grid-row-gap: 40px;
+  grid-column-gap: 30px;
+  grid-template-columns: repeat(2, calc(50% - 15px));
+  grid-template-areas:
+  "name phone"
+  "textarea textarea"
+  "submit checkbox";
+}
+
+.form__column h2 {
+  @include font(36px, 57px, 400);
+  @include fields();
+  margin-bottom: 2px;
+  font-family: $roboto;
+}
+
+.form__column p {
+  @include fields();
+  margin-bottom: 49px;
+}
+
+.form__input input,
+.form__column textarea {
+  @include font(16px, 22px, 400);
+  font-family: $font;
+  padding: 14px 16px;
+  margin: 0;
+  width: 100%;
+  background-color: rgba($white, 0.1);
+  color: $white;
+  border: none;
+
+  &::placeholder {
+    color: $white;
+  }
+}
+
+.form__input {
+  &--name {
+    grid-area: name;
+  }
+
+  &--phone {
+    grid-area: phone;
+  }
+
+  &--checkbox {
+    grid-area: checkbox;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  &--error {
+    border: 1px solid red;
+  }
+}
+
+.form__column textarea {
+  grid-area: textarea;
+  resize: none;
+  min-height: 154px;
+}
+
+.form__column button {
+  @include a();
+  @include button();
+  @include font(16px, 19px, 700);
+  padding: 17px 45px;
+  background-color: $accent;
+  font-family: $roboto;
+  text-transform: uppercase;
+  border: 1px solid $white;
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+  width: 100%;
+
+  &:hover {
+    color: $accent;
+    background-color: $white;
+    transition: $tr;
+  }
+
+  &:active {
+    color: $dark;
+    transition: $tr;
+  }
+}
+
+.form__input--checkbox input {
+  appearance: none;
+  position: absolute;
+  padding: 0;
+  background-color: transparent;
+}
+
+.form__input--checkbox label {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: -40px;
+    height: 23px;
+    width: 23px;
+    border: 2px solid $white;
+    border-radius: 3px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: -34px;
+    height: 8px;
+    width: 12px;
+    border-left: 2px solid $white;
+    border-bottom: 2px solid $white;
+    transform: rotate(-45deg);
+    display: none;
+  }
+}
+
+/* Чекбокс активный */
+
+.form__input--checkbox input:checked + label::after {
+  display: block;
 }

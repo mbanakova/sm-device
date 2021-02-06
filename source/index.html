@@ -167,7 +167,8 @@
                   <source type="image/webp" srcset="img/service3-desk.webp 1x, img/service3-desk@2.webp 2x">
                   <!-- 1х: 370px; 2x: 740px -->
                   <img src="img/service2-desk.png" srcset="img/service3-desk.png 370w, img/service3-desk@2.png 740w"
-                    sizes="(max-width: 767px) 290px, (max-width: 1023px) 720px, 370px" alt="Комплектующие для светотехники">
+                    sizes="(max-width: 767px) 290px, (max-width: 1023px) 720px, 370px"
+                    alt="Комплектующие для светотехники">
                 </picture>
                 <h3>Комплектующие для светотехники</h3>
               </a>
@@ -177,20 +178,35 @@
       </div>
     </section>
     <section class="form" id="form">
-      <div class="container">
-        <h2 class="section-title">Остались вопросы? Задайте их нам!</h2>
-        <p>Мы проконсультируем Вас бесплатно</p>
-        <form action="https://echo.htmlacademy.ru" method="POST">
-          <input type="text" name="username" id="username">
-          <label for="username"></label>
-          <input type="tel" name="userphone" id="userphone">
-          <label for="userphone"></label>
-          <textarea name="textarea" id="textarea">Ваш вопрос</textarea>
-          <input type="checkbox" name="confirm" id="confirm">
-          <label for="confirm">Я согласен на обработку персональных данных</label>
-          <button type="submit">Задать вопрос</button>
-        </form>
-      </div>
+      <div class="container form__content">
+        <picture>
+          <!-- 1х: 511px; 2x: 1022px -->
+          <source type="image/webp" srcset="img/airplane-desk.webp 1x, img/airplane-desk@2.webp 2x">
+          <!-- 1х: 511px; 2x: 1022px -->
+          <img src="img/service2-desk.png" srcset="img/airplane-desk.png 511w, img/airplane-desk@2.png 1022w"
+            sizes="511px" alt="Бумажный самолётик">
+        </picture>
+        <div class="form__column">
+          <h2>Остались вопросы? Задайте их нам!</h2>
+          <p>Мы проконсультируем Вас бесплатно</p>
+          <form action="https://echo.htmlacademy.ru" method="POST">
+            <div class="form__input form__input--name">
+              <input type="text" name="username" id="username" placeholder="Имя" required>
+              <label for="username"></label>
+            </div>
+            <div class="form__input form__input--phone">
+              <input type="tel" name="userphone" id="userphone" placeholder="Телефон" data-mask="+7 (000) 000-00-00"
+                pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}" required>
+              <label for="userphone"></label>
+            </div>
+            <textarea name="textarea" id="textarea">Ваш вопрос</textarea>
+            <button type="submit">Задать вопрос</button>
+            <div class="form__input form__input--checkbox">
+              <input type="checkbox" name="confirm" id="confirm">
+              <label for="confirm">Я согласен на обработку персональных данных</label>
+            </div>
+          </form>
+        </div>
     </section>
   </main>
   <footer class="footer">
@@ -289,6 +305,43 @@
     </form>
   </section>
   <script src="js/script.js"></script>
+  <!-- <script>
+    let maskedPhone = document.querySelector("[data-mask]");
+    maskedPhone.addEventListener('input', showMask);
+
+    function showMask() {
+      var input = this;
+      var mask = input.dataset.mask;
+      var value = input.value;
+      var literalPattern = /[0\*]/;
+      var numberPattern = /[0-9]/;
+      var newValue = "";
+
+      try {
+        var maskLength = mask.length;
+        var valueIndex = 0;
+        var maskIndex = 0;
+
+        for (; maskIndex < maskLength;) {
+          if (maskIndex >= value.length) break;
+
+          if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
+
+          // Found a literal
+          while (mask[maskIndex].match(literalPattern) === null) {
+            if (value[valueIndex] === mask[maskIndex]) break;
+            newValue += mask[maskIndex++];
+          }
+          newValue += value[valueIndex++];
+          maskIndex++;
+        }
+
+        input.value = newValue;
+      } catch (event) {
+        maskedPhone.removeEventListener();
+      }
+    }
+  </script> -->
 </body>
 
 </html>

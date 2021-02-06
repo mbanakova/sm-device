@@ -1,15 +1,45 @@
 'use strict';
-// var pageHeader = document.querySelector('.page-header');
-// var headerToggle = document.querySelector('.page-header__toggle');
 
-// pageHeader.classList.remove('page-header--nojs');
+var maskedPhone = document.querySelector('[data-mask]');
+maskedPhone.addEventListener('input', showMask);
 
-// headerToggle.addEventListener('click', function () {
-//   if (pageHeader.classList.contains('page-header--closed')) {
-//     pageHeader.classList.remove('page-header--closed');
-//     pageHeader.classList.add('page-header--opened');
-//   } else {
-//     pageHeader.classList.add('page-header--closed');
-//     pageHeader.classList.remove('page-header--opened');
-//   }
-// });
+function showMask() {
+  var input = this;
+  var mask = input.dataset.mask;
+  var value = input.value;
+  var literalPattern = /[0\*]/;
+  var numberPattern = /[0-9]/;
+  var newValue = '';
+
+  try {
+    var maskLength = mask.length;
+    var valueIndex = 0;
+    var maskIndex = 0;
+
+    for (; maskIndex < maskLength;) {
+      if (maskIndex >= value.length) {
+        break;
+      }
+
+      if (mask[maskIndex] === '0' && value[valueIndex].match(numberPattern) === null) {
+        break;
+      }
+
+      // Found a literal
+      while (mask[maskIndex].match(literalPattern) === null) {
+        if (value[valueIndex] === mask[maskIndex]) {
+          break;
+        }
+
+        newValue += mask[maskIndex++];
+      }
+
+      newValue += value[valueIndex++];
+      maskIndex++;
+    }
+
+    input.value = newValue;
+  } catch (event) {
+    maskedPhone.removeEventListener();
+  }
+}
