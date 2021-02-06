@@ -1,1 +1,99 @@
-// . {}
+.features {
+  margin-bottom: 110px;
+  color: $grey;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 60px;
+  }
+}
+
+.features__list {
+  @include ul();
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-gap: 30px;
+  justify-content: center;
+
+  @media (max-width: $desktop) {
+    grid-template-columns: repeat(2, calc(50% - 15px));
+  }
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features__item {
+  padding: 40px 45px 50px 43px;
+  width: auto;
+  min-height: 299px;
+  border: 1px solid $card-border;
+  border-left: 3px solid $accent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent;
+    color: $white;
+    border-color: $accent;
+    transition: $tr;
+  }
+
+  @media (max-width: $desktop) {
+    padding: 24px 24px 16px;
+    min-height: 232px;
+    border-left-width: 2px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 25px 18px 22px 27px;
+  }
+}
+
+.features__item:hover h3 {
+  color: $white;
+  transition: $tr;
+}
+
+.features__item:hover svg {
+  fill: $white;
+  transition: $tr;
+}
+
+.features__item svg {
+  margin-bottom: 23px;
+  fill: $accent;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 14px;
+  }
+}
+
+.features__item h3 {
+  @include fields();
+  @include font(24px, 38px, 400);
+  margin-bottom: 11px;
+  font-family: $roboto;
+  color: $accent;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: $tablet) {
+    @include font(20px, 140%, 400);
+    margin-bottom: 16px;
+  }
+}
+
+.features__item p {
+  @include fields();
+
+  @media (max-width: $desktop) {
+    @include font(16px, 21px, 400);
+  }
+
+  @media (max-width: $tablet) {
+    @include font(16px, 22px, 400);
+  }
+}

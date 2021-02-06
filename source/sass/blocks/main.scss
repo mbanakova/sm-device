@@ -2,6 +2,7 @@
   // min-height: 100vh;
   min-height: 878px;
   padding-top: 316px;
+  margin-bottom: 110px;
   background-color: $dark;
   background-image: url("../img/waves-desk.png"), url("../img/bg-desk.png"), url("../img/pcb-desk.png");
   background-repeat: no-repeat;
@@ -11,6 +12,7 @@
 
   @media (max-width: $desktop) {
     padding-top: 187px;
+    margin-bottom: 54px;
     min-height: 686px;
     // background-image: url(../img/waves-tab.png), url(../img/bg-tab.png), url(../img/pcb-tab.png);
     // background-size: cover, cover, 465px 300px;
@@ -19,6 +21,7 @@
 
   @media (max-width: $tablet) {
     padding-top: 285px;
+    margin-bottom: 37px;
     min-height: 646px;
   }
 }

@@ -1,1 +1,108 @@
-// {}
+.about {
+  color: $grey;
+  margin-bottom: 110px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 83px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 65px;
+  }
+}
+
+.about__content {
+  position: relative;
+  padding-left: 210px;
+  margin-right: 126px;
+  min-height: 317px;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    @include pseudo();
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 317px;
+    background-image: url("../img/2005-desk.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  @media (max-width: $desktop) {
+    margin-right: 0;
+
+    &::before {
+      background-image: url("../img/2005-tab.png");
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.about h2 {
+  @include fields();
+  @include font(36px, 57px, 400);
+  margin-bottom: 18px;
+  font-family: $roboto;
+
+  @media (max-width: $desktop) {
+    @include font(32px, 140%, 400);
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $tablet) {
+    @include font(28px, 140%, 400);
+    margin-bottom: 12px;
+  }
+}
+
+.about p {
+  @include fields();
+  @include font(16px, 22px, 400);
+  margin-bottom: 15px;
+
+  @media (max-width: $desktop) {
+    @include font(16px, 140%, 400);
+  }
+}
+
+.about__link {
+  @include a();
+  @include button();
+  padding: 15px 45px;
+  margin-right: auto;
+  color: $accent;
+  border: 1px solid $accent;
+  border-radius: 5px;
+
+  &:hover {
+    color: $white;
+    background-color: $accent;
+    transition: $tr;
+  }
+
+  &:active {
+    opacity: 0.8;
+    transition: $tr;
+  }
+
+  @media (max-width: $desktop) {
+    @include font(14px, 14pxpx, 400);
+    padding: 10px 45px;
+
+    &:active {
+      color: $white;
+      background-color: $accent;
+      transition: $tr;
+    }
+  }
+}

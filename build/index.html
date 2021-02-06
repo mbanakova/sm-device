@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Smart Device</title>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
+  <title>Smart Device</title>
 </head>
 
 <body>
@@ -58,26 +59,39 @@
         </div>
       </div>
     </section>
+
     <section class="features" id="features">
       <div class="container">
-        <h2 class="section-title">Наши преимущества</h2>
-        <ul>
-          <li>
+        <h2 class="visually-hidden">Наши преимущества</h2>
+        <ul class="features__list">
+          <li class="features__item">
+            <svg width="29" height="35" role="img" aria-label="Название">
+              <use xlink:href="img/sprite_auto.svg#icon-stopwatch"></use>
+            </svg>
             <h3>Оперативные сроки</h3>
             <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость,
               производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
           </li>
-          <li>
+          <li class="features__item">
+            <svg width="35" height="35" role="img" aria-label="Название">
+              <use xlink:href="img/sprite_auto.svg#icon-hired"></use>
+            </svg>
             <h3>Крупные поставщики</h3>
             <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE,
               HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
             </p>
           </li>
-          <li>
+          <li class="features__item">
+            <svg width="36" height="31" role="img" aria-label="Название">
+              <use xlink:href="img/sprite_auto.svg#icon-detective"></use>
+            </svg>
             <h3>Полная конфиденциальность</h3>
             <p>По желанию клиента мы обеспечиваем полную конфеденциальность.</p>
           </li>
-          <li>
+          <li class="features__item">
+            <svg width="35" height="35" role="img" aria-label="Название">
+              <use xlink:href="img/sprite_auto.svg#icon-tag"></use>
+            </svg>
             <h3>Персонализация стоимости</h3>
             <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
               устраивает.</p>
@@ -87,33 +101,70 @@
     </section>
     <section class="about">
       <div class="container">
-        <h2 class="section-title">О компании</h2>
-        <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
-          1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
-        <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
-          Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
-          РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
-          светотехники России.</p>
-        <a href="#">Подробнее</a>
+        <div class="about__content">
+          <h2>О компании</h2>
+          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
+            1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
+          <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
+            Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
+            РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
+            светотехники России.</p>
+          <a class="about__link" href="#">Подробнее</a>
+        </div>
       </div>
     </section>
     <section class="service">
       <div class="container">
-        <h2 class="section-title">Service Device предлагает следующие товары и услуги</h2>
-        <ul>
-          <li><a href="#">
-              <p>Производство печатных плат</p>
-              <div></div>
-            </a></li>
-          <li><a href="#">
-              <p>Монтаж печатных плат</p>
-              <div></div>
-            </a></li>
-          <li><a href="#">
-              <p>Комплектующие для светотехники</p>
-              <div></div>
-            </a></li>
-        </ul>
+        <div class="service__content">
+          <h2>Service Device предлагает следующие товары и услуги</h2>
+          <ul class="service__list">
+            <li class="service__item">
+              <a class="service__link" href="#">
+                <picture>
+                  <!-- 1х: 290px; 2x: 580px -->
+                  <source type="image/webp" media="(max-width: 767px)" srcset="img/service1-mob.webp 1x, img/service1-mob@2.webp 2x">
+                  <!-- 1х: 715px; 2x: 1430px -->
+                  <source type="image/webp" media="(max-width: 1023px)" srcset="img/service1-tab.webp 1x, img/service1-tab@2.webp 2x">
+                  <!-- 1х: 370px; 2x: 740px -->
+                  <source type="image/webp" srcset="img/service1-desk.webp 1x, img/service1-desk@2.webp 2x">
+                  <!-- 1х: 370px; 2x: 740px -->
+                  <img src="img/service1-desk.png" srcset="img/service1-desk.png 370w, img/service1-desk@2.png 740w" sizes="(max-width: 767px) 290px, (max-width: 1023px) 715px, 370px" alt="Производство печатных плат">
+                </picture>
+                <h3>Производство печатных плат</h3>
+              </a>
+            </li>
+            <li class="service__item">
+              <a class="service__link" href="#">
+                <picture>
+                  <!-- 1х: 290px; 2x: 580px -->
+                  <source type="image/webp" media="(max-width: 767px)" srcset="img/service2-mob.webp 1x, img/service2-mob@2.webp 2x">
+                  <!-- 1х: 720px; 2x: 1430px -->
+                  <source type="image/webp" media="(max-width: 1023px)" srcset="img/service2-tab.webp 1x, img/service2-tab@2.webp 2x">
+                  <!-- 1х: 370px; 2x: 740px -->
+                  <source type="image/webp" srcset="img/service2-desk.webp 1x, img/service2-desk@2.webp 2x">
+                  <!-- 1х: 370px; 2x: 740px -->
+                  <img src="img/service2-desk.png" srcset="img/service1-desk.png 370w, img/service2-desk@2.png 740w" sizes="(max-width: 767px) 290px, (max-width: 1023px) 720px, 370px" alt="Монтаж печатных плат">
+                </picture>
+                <h3>Монтаж печатных плат</h3>
+              </a>
+            </li>
+            <li class="service__item">
+              <a class="service__link" href="#">
+                <picture>
+                  <!-- 1х: 290px; 2x: 580px -->
+                  <source type="image/webp" media="(max-width: 767px)" srcset="img/service3-mob.webp 1x, img/service3-mob@2.webp 2x">
+                  <!-- 1х: 720px; 2x: 1430px -->
+                  <source type="image/webp" media="(max-width: 1023px)" srcset="img/service3-tab.webp 1x, img/service3-tab@2.webp 2x">
+                  <!-- 1х: 370px; 2x: 740px -->
+                  <source type="image/webp" srcset="img/service3-desk.webp 1x, img/service3-desk@2.webp 2x">
+                  <!-- 1х: 370px; 2x: 740px -->
+                  <img src="img/service2-desk.png" srcset="img/service3-desk.png 370w, img/service3-desk@2.png 740w" sizes="(max-width: 767px) 290px, (max-width: 1023px) 720px, 370px" alt="Комплектующие для светотехники">
+                </picture>
+                <h3>Комплектующие для светотехники</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <section class="form" id="form">
@@ -169,18 +220,23 @@
           <div class="accordion__site-nav">
             <input class="accordion__input" type="checkbox" name="site-nav" id="site-nav" checked="">
             <label class="accordion__label" for="site-nav">Разделы сайта</label>
-            <div class="accordion__ul-wrapper">
-            <ul class="accordion__list">
-              <li><a class="accordion__link" href="#">О компании</a></li>
-              <li><a class="accordion__link" href="#">Продукты</a></li>
-              <li><a class="accordion__link" href="#">Производство печатных плат</a></li>
-              <li><a class="accordion__link" href="#">Монтаж печатных плат</a></li>
+            <ul class="accordion__list accordion__list--double">
+              <li class="accordion__column">
+                <ul class="accordion__inner-list">
+                  <li><a class="accordion__link" href="#">О компании</a></li>
+                  <li><a class="accordion__link" href="#">Продукты</a></li>
+                  <li><a class="accordion__link" href="#">Производство печатных плат</a></li>
+                  <li><a class="accordion__link" href="#">Монтаж печатных плат</a></li>
+                </ul>
+              </li>
+              <li class="accordion__column">
+                <ul class="accordion__inner-list">
+                  <li><a class="accordion__link" href="#">Комплектующие</a></li>
+                  <li><a class="accordion__link" href="#">Доставка</a></li>
+                  <li><a class="accordion__link" href="#">Контакты</a></li>
+                </ul>
+              </li>
             </ul>
-            <ul class="accordion__list">
-              <li><a class="accordion__link" href="#">Комплектующие</a></li>
-              <li><a class="accordion__link" href="#">Доставка</a></li>
-              <li><a class="accordion__link" href="#">Контакты</a></li>
-            </ul></div>
           </div>
           <div class="accordion__contacts">
             <input class="accordion__input" type="checkbox" name="contacts" id="contacts">
@@ -195,8 +251,9 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <ul class="footer__legacy">
-          <li class="footer__bottom-item footer__bottom-item--rights"><a class="footer__link footer__link" href="#">Все права защищены</a></li>
+        <ul class="footer__legal">
+          <li class="footer__bottom-item footer__bottom-item--rights"><a class="footer__link footer__link" href="#">Все
+              права защищены</a></li>
           <li class="footer__bottom-item footer__bottom-item--sd-bottom"><a class="footer__link footer__link" href="#">1999-2018 SD Service Devices</a></li>
           <li class="footer__bottom-item"><a class="footer__link" href="#">Условия конфиденциальности</a></li>
           <li class="footer__bottom-item"><a class="footer__link" href="#">Developed by WOW studio</a></li>

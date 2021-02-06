@@ -1,1 +1,134 @@
-// . {}
+.service {
+  padding-top: 93px;
+  padding-bottom: 127px;
+  background-color: $dark;
+  color: $white;
+  font-family: $roboto;
+
+  @media (max-width: $desktop) {
+    padding-top: 53px;
+    padding-bottom: 78px;
+  }
+}
+
+.service__content {
+  margin: 0 auto;
+  max-width: 1170px;
+
+  @media (max-width: $desktop) {
+    max-width: 720px;
+  }
+}
+
+.service h2 {
+  @include font(36px, 158%, 400);
+  @include fields();
+  margin-bottom: 40px;
+
+  @media (max-width: $desktop) {
+    @include font(32px, 45px, 400);
+    margin-bottom: 46px;
+    max-width: 85%;
+  }
+}
+
+.service__list {
+  @include ul();
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  justify-content: center;
+
+  @media (max-width: $desktop) {
+    grid-template-columns: 1fr;
+    grid-gap: 46px;
+    overflow: hidden;
+  }
+}
+
+.service__item {
+  max-width: 370px;
+  max-height: 620px;
+  overflow: hidden;
+
+  @media (max-width: $desktop) {
+    max-width: 720px;
+    max-height: 256px;
+
+    &:first-of-type {
+      margin-left: auto; // Потому что картинка кривая и на 5п уже!!
+    }
+  }
+}
+
+.service__link {
+  @include a();
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    bottom: 5px;
+    right: 0;
+    width: 63px;
+    height: 63px;
+    background-color: $accent;
+    z-index: 10;
+  }
+
+  &::after {
+    @include pseudo();
+    @include font(30px, 30px, 400);
+    content: "\203A";
+    width: 20px;
+    height: 20px;
+    bottom: 32px;
+    right: 20px;
+    z-index: 20;
+  }
+
+  &:hover::after {
+    animation: bounce .3s alternate ease infinite;
+  }
+}
+
+.service__link img {
+  opacity: 0.2;
+  max-width: 370px;
+  max-height: 620px;
+
+  @media (max-width: $desktop) {
+    max-width: 720px;
+    max-height: 256px;
+  }
+}
+
+.service__link:hover img {
+  opacity: 0.5;
+  transform: scale(1.05);
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+
+  @media (max-width: $desktop) {
+
+  }
+}
+
+.service h3 {
+  @include font(20px, 30px, 400);
+  @include fields();
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  text-align: left;
+  max-width: 50%;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateX(-2px);
+  }
+  to   {
+    transform: translateX(2px);
+  }
+}
