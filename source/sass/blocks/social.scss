@@ -18,6 +18,9 @@
 }
 
 .social__link {
+  @include a();
+  height: 23px;
+
   &:hover svg {
     fill: $accent;
     transition: $tr;

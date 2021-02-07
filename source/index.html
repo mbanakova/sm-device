@@ -213,18 +213,10 @@
     <div class="container footer__container">
       <div class="footer__top">
         <div class="footer__wrapper">
-          <a class="logo footer__logo" href="">
-            <svg width="52" height="52" role="img" aria-label="Логотип">
-              <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+          <a class="footer__logo logo logo--service" href="">
+            <svg width="216" height="45" role="img" aria-label="Логотип">
+              <use xlink:href="img/sprite_auto.svg#icon-logo-footer"></use>
             </svg>
-            <div class="logo__text">
-              <svg width="148" height="30" role="img" aria-label="Название">
-                <use xlink:href="img/sprite_auto.svg#icon-logo-service"></use>
-              </svg>
-              <svg width="106" height="15" role="img" aria-label="Название">
-                <use xlink:href="img/sprite_auto.svg#icon-text"></use>
-              </svg>
-            </div>
           </a>
           <a class="footer__link footer__link--sd" href="#">1999-2018 SD Service Devices</a>
           <ul class="footer__social social">
@@ -305,43 +297,6 @@
     </form>
   </section>
   <script src="js/script.js"></script>
-  <!-- <script>
-    let maskedPhone = document.querySelector("[data-mask]");
-    maskedPhone.addEventListener('input', showMask);
-
-    function showMask() {
-      var input = this;
-      var mask = input.dataset.mask;
-      var value = input.value;
-      var literalPattern = /[0\*]/;
-      var numberPattern = /[0-9]/;
-      var newValue = "";
-
-      try {
-        var maskLength = mask.length;
-        var valueIndex = 0;
-        var maskIndex = 0;
-
-        for (; maskIndex < maskLength;) {
-          if (maskIndex >= value.length) break;
-
-          if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
-
-          // Found a literal
-          while (mask[maskIndex].match(literalPattern) === null) {
-            if (value[valueIndex] === mask[maskIndex]) break;
-            newValue += mask[maskIndex++];
-          }
-          newValue += value[valueIndex++];
-          maskIndex++;
-        }
-
-        input.value = newValue;
-      } catch (event) {
-        maskedPhone.removeEventListener();
-      }
-    }
-  </script> -->
 </body>
 
 </html>

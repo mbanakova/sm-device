@@ -2,10 +2,6 @@
   display: flex;
   justify-content: space-between;
 
-  // @media (max-width: $desktop) {
-
-  // }
-
   @media (max-width: $tablet) {
     flex-direction: column;
   }
@@ -17,10 +13,6 @@
   @media (max-width: $desktop) {
     margin-right: 0;
   }
-
-  // @media (max-width: $tablet) {
-
-  // }
 }
 
 .accordion__input {
@@ -46,7 +38,7 @@
       height: 2px;
       top: 50%;
       right: 0;
-      background-color: rgba($black, 0.2);
+      background-color: $light-gray;
       transform: translate(-50%);
       box-shadow: none;
     }
@@ -57,7 +49,7 @@
       height: 16px;
       top: 50%;
       right: 15px;
-      background-color: rgba($black, 0.2);
+      background-color: $light-gray;
       transform: translateY(-45%);
     }
 
@@ -74,18 +66,6 @@
   }
 }
 
-.accordion__ul-wrapper {
-  display: flex;
-
-  @media (max-width: $desktop) {
-    flex-direction: column;
-  }
-
-  @media (max-width: $tablet) {
-    display: none;
-  }
-}
-
 .accordion__list {
   @include ul();
   display: flex;
@@ -98,7 +78,6 @@
 
   &--double {
     flex-direction: row;
-
 
     @media (max-width: $desktop) {
       flex-direction: column;
@@ -127,10 +106,17 @@
     margin-right: 0;
   }
 }
+
 .accordion__input:checked ~ .accordion__list {
   @media (max-width: $tablet) {
     display: block;
+    transform: translateY(0%);
+    transition: 1s;
   }
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+  display: none;
 }
 
 .accordion__link {
