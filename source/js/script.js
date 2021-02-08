@@ -1,7 +1,22 @@
 'use strict';
 
-var maskedPhone = document.querySelector('[data-mask]');
-maskedPhone.addEventListener('input', showMask);
+var callBtn = document.querySelector('.header__button');
+var modal = document.querySelector('.modal');
+var closeModalBtn = document.querySelector('#close');
+
+callBtn.addEventListener('click', function () {
+  modal.classList.add('modal--open');
+});
+
+closeModalBtn.addEventListener('click', function () {
+  modal.classList.toggle('modal--open');
+});
+
+// ---------------------------------------------------
+var maskedPhones = document.querySelectorAll('[data-mask]');
+maskedPhones.forEach(function (elem) {
+  elem.addEventListener('input', showMask);
+});
 
 function showMask() {
   var input = this;
@@ -40,6 +55,6 @@ function showMask() {
 
     input.value = newValue;
   } catch (event) {
-    maskedPhone.removeEventListener();
+    maskedPhones.removeEventListener();
   }
 }

@@ -53,11 +53,13 @@
         <div class="main__layout">
           <h2 class="section-title">Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-          <a class="main__button main__button--desk" href="#form">Получить бесплатную консультацию</a>
-          <a class="main__button main__button--mobile" href="#form">Бесплатная консультация</a>
-          <a class="main__link" href="#features">Скролл вниз</a>
+          <a class="main__button" href="#feedback">
+            <span class="main__span main__span--desk">Получить бесплатную консультацию</span>
+            <span class="main__span main__span--mob">Бесплатная консультация</span>
+          </a>
         </div>
       </div>
+      <a class="main__link" href="#features">Скролл вниз</a>
     </section>
 
     <section class="features" id="features">
@@ -167,15 +169,15 @@
         </div>
       </div>
     </section>
-    <section class="form" id="form">
-      <div class="container form__content">
+    <section class="feedback" id="feedback">
+      <div class="container feedback__content">
         <picture>
           <!-- 1х: 511px; 2x: 1022px -->
           <source type="image/webp" srcset="img/airplane-desk.webp 1x, img/airplane-desk@2.webp 2x">
           <!-- 1х: 511px; 2x: 1022px -->
           <img src="img/service2-desk.png" srcset="img/airplane-desk.png 511w, img/airplane-desk@2.png 1022w" sizes="511px" alt="Бумажный самолётик">
         </picture>
-        <div class="form__column">
+        <div class="feedback__column form">
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
           <form action="https://echo.htmlacademy.ru" method="POST">
@@ -184,7 +186,7 @@
               <label for="username"></label>
             </div>
             <div class="form__input form__input--phone">
-              <input type="tel" name="userphone" id="userphone" placeholder="Телефон" data-mask="+7 (000) 000-00-00" pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}" required="">
+              <input type="tel" name="userphone" id="userphone" placeholder="Телефон" data-mask="+7 (000) 000-00-00" pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}" title="Только цифры" required="">
               <label for="userphone"></label>
             </div>
             <textarea name="textarea" id="textarea">Ваш вопрос</textarea>
@@ -195,7 +197,8 @@
             </div>
           </form>
         </div>
-    </div></section>
+      </div>
+    </section>
   </main>
   <footer class="footer">
     <div class="container footer__container">
@@ -267,19 +270,31 @@
     </div>
   </footer>
   <section class="modal">
-    <button type="button" aria-label="Закрыть модальное окно"></button>
-    <h2 class="section-title">Закажите звонок</h2>
-    <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-    <form action="https://echo.htmlacademy.ru" method="POST">
-      <input type="text" name="user-name" id="user-name">
-      <label for="username"></label>
-      <input type="tel" name="user-phone" id="user-phone">
-      <label for="userphone"></label>
-      <textarea name="text-area" id="text-area">Ваш вопрос</textarea>
-      <input type="checkbox" name="agree" id="agree">
-      <label for="agree">Я согласен на обработку персональных данных</label>
-      <button type="submit">Задать вопрос</button>
-    </form>
+    <div class="modal__overlay">
+      <div class="modal__container">
+        <div class="form">
+          <button type="button" aria-label="Закрыть модальное окно" id="close"></button>
+          <h2>Закажите звонок</h2>
+          <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+          <form action="https://echo.htmlacademy.ru" method="POST">
+            <div class="form__input form__input--name">
+              <input type="text" name="user-name" id="user-name" placeholder="Имя" required="">
+              <label for="user-name"></label>
+            </div>
+            <div class="form__input form__input--phone">
+              <input type="tel" name="user-phone" id="user-phone" placeholder="Телефон" data-mask="+7 (000) 000-00-00" pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}" title="Только цифры" required="">
+              <label for="user-phone"></label>
+            </div>
+            <textarea name="text-area" id="text-area">Ваш вопрос</textarea>
+            <button type="submit">Отправить</button>
+            <div class="form__input form__input--checkbox">
+              <input type="checkbox" name="confirm" id="confirm-modal">
+              <label for="confirm-modal">Я согласен на обработку персональных данных</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
   <script src="js/script.js"></script>
 </body>

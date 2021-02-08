@@ -5,6 +5,7 @@
   right: 0;
   background-color: transparent;
   color: $white;
+  z-index: 999;
 
   @media (max-width: $desktop) {
     top: 20px;

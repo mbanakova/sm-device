@@ -1,14 +1,29 @@
 .main {
   // min-height: 100vh;
+  position: relative;
   min-height: 878px;
   padding-top: 316px;
   margin-bottom: 110px;
   background-color: $dark;
-  background-image: url("../img/waves-desk.png"), url("../img/bg-desk.png"), url("../img/pcb-desk.png");
+  background-image: url("../img/waves-desk.png"), url("../img/icon-triangle-bg.svg");
   background-repeat: no-repeat;
-  background-size: cover, cover, 705px 515px;
-  background-position: center, center, 86% 60%;
+  background-size: cover, 636px 636px;
+  background-position: center, 70% 50%;
   color: $white;
+  z-index: 0;
+
+  &::before {
+    @include pseudo();
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../img/pcb-desk.png");
+    background-repeat: no-repeat;
+    background-size: 705px 515px;
+    background-position: 86% 60%;
+    z-index: 0;
+  }
 
   @media (max-width: $desktop) {
     padding-top: 187px;
@@ -33,7 +48,7 @@
 .main__layout {
   max-width: 54%;
   margin-right: auto;
-  padding-bottom: 186px;
+  // padding-bottom: 186px;
 
   @media (max-width: $desktop) {
     max-width: 68%;
@@ -104,10 +119,6 @@
   border-radius: 5px;
   letter-spacing: 0.05em;
 
-  &--mobile {
-    display: none;
-  }
-
   &:hover {
     color: $accent;
     background-color: $white;
@@ -123,8 +134,18 @@
     width: 100%;
     margin: 0;
     padding: 17px 25px;
+  }
+}
 
-    &--mobile {
+.main__span {
+  display: block;
+
+  &--mob {
+    display: none;
+  }
+
+  @media (max-width: $tablet) {
+    &--mob {
       display: block;
     }
 
@@ -138,8 +159,8 @@
   @include a();
   @include font(14px, 16px, 400);
   position: absolute;
-  left: -10px;
-  bottom: 36px;
+  left: 0;
+  bottom: 100px;
   color: rgba($white, 0.5);
   text-align: left;
   transform: rotate(-90deg);
