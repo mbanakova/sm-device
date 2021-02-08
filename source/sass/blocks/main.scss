@@ -3,7 +3,6 @@
   position: relative;
   min-height: 878px;
   padding-top: 315px;
-  margin-bottom: 111px;
   background-color: $dark;
   background-image: url("../img/waves-desk.png");
   background-repeat: no-repeat;
@@ -25,7 +24,6 @@
 
   @media (max-width: $desktop) {
     padding-top: 188px;
-    margin-bottom: 54px;
     min-height: 686px;
     background-image: url("../img/waves-desk.png");
     background-size: cover;
@@ -40,7 +38,6 @@
 
   @media (max-width: $tablet) {
     padding-top: 285px;
-    margin-bottom: 37px;
     min-height: 646px;
     background-image: url("../img/waves-desk.png");
     background-size: cover;

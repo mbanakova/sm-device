@@ -106,7 +106,7 @@
   }
 
   &:hover::after {
-    animation: bounce .3s alternate ease infinite;
+    animation: bounceX .3s alternate ease infinite;
   }
 }
 
@@ -144,11 +144,20 @@
   }
 }
 
-@keyframes bounce {
+@keyframes bounceX {
   from {
     transform: translateX(-2px);
   }
   to   {
     transform: translateX(2px);
+  }
+}
+
+@keyframes bounceY {
+  from {
+    transform: translateY(-2px);
+  }
+  to   {
+    transform: translateY(2px);
   }
 }

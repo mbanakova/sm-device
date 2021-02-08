@@ -1,9 +1,9 @@
 .about {
   color: $grey;
-  margin-bottom: 110px;
+  margin-bottom: 103px;
 
   @media (max-width: $desktop) {
-    margin-bottom: 83px;
+    margin-bottom: 70px;
   }
 
   @media (max-width: $tablet) {
@@ -15,6 +15,7 @@
   position: relative;
   padding-left: 210px;
   margin-right: 126px;
+  margin-left: 92px;
   min-height: 317px;
   display: flex;
   flex-direction: column;
@@ -26,16 +27,24 @@
     width: 220px;
     height: 317px;
     background-image: url("../img/2005-desk.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: left 8px;
   }
 
   @media (max-width: $desktop) {
-    margin-right: 0;
+    margin: 0;
+    min-height: 362px;
+    padding-left: 188px;
 
     &::before {
+      width: 251px;
+      height: 362px;
+      left: -28px;
+      top: -5px;
       background-image: url("../img/2005-tab.png");
+      background-size: 251px 362px;
+      background-position: left top;
     }
   }
 
@@ -61,28 +70,45 @@
 
   @media (max-width: $tablet) {
     @include font(28px, 140%, 400);
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 }
 
 .about p {
   @include fields();
   @include font(16px, 22px, 400);
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   @media (max-width: $desktop) {
     @include font(16px, 140%, 400);
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__content span {
+  @media (max-width: $desktop) {
+    display: none;
   }
 }
 
 .about__link {
   @include a();
   @include button();
-  padding: 15px 45px;
+  @include font(14px, 16px, 700);
+  padding: 16px 48px;
+  margin-top: 38px;
   margin-right: auto;
   color: $accent;
   border: 1px solid $accent;
   border-radius: 5px;
+  letter-spacing: 0.05em;
 
   &:hover {
     color: $white;
@@ -96,13 +122,19 @@
   }
 
   @media (max-width: $desktop) {
-    @include font(14px, 14pxpx, 400);
-    padding: 10px 45px;
+    @include font(14px, 14px, 400);
+    padding: 15px 47px 14px;
+    margin-top: 42px;
 
     &:active {
       color: $white;
       background-color: $accent;
       transition: $tr;
     }
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 29px;
+    padding: 15px 50px 14px;
   }
 }
