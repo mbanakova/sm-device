@@ -198,6 +198,7 @@
   color: rgba($white, 0.5);
   text-align: left;
   transform: rotate(-90deg);
+  z-index: 900;
 
   &:hover {
     color: $accent;

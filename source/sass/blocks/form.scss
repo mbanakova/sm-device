@@ -80,6 +80,7 @@
   "submit checkbox";
 
   .modal & {
+    max-width: auto;
     grid-template-columns: 1fr;
     grid-template-areas:
     "name"
