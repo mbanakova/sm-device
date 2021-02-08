@@ -2,17 +2,16 @@
   // min-height: 100vh;
   position: relative;
   min-height: 878px;
-  padding-top: 316px;
-  margin-bottom: 110px;
+  padding-top: 315px;
+  margin-bottom: 111px;
   background-color: $dark;
-  background-image: url("../img/waves-desk.png"), url("../img/icon-triangle-bg.svg");
+  background-image: url("../img/waves-desk.png");
   background-repeat: no-repeat;
-  background-size: cover, 636px 636px;
-  background-position: center, 70% 50%;
+  background-size: cover;
+  background-position: center;
   color: $white;
-  z-index: 0;
 
-  &::before {
+  &::after {
     @include pseudo();
     width: 100%;
     height: 100%;
@@ -20,24 +19,38 @@
     left: 0;
     background-image: url("../img/pcb-desk.png");
     background-repeat: no-repeat;
-    background-size: 705px 515px;
-    background-position: 86% 60%;
-    z-index: 0;
+    background-size: 713px 655px;
+    background-position: 86.5% 117px;
   }
 
   @media (max-width: $desktop) {
-    padding-top: 187px;
+    padding-top: 188px;
     margin-bottom: 54px;
     min-height: 686px;
-    // background-image: url(../img/waves-tab.png), url(../img/bg-tab.png), url(../img/pcb-tab.png);
-    // background-size: cover, cover, 465px 300px;
-    // background-position: center, center, center; бесит
+    background-image: url("../img/waves-desk.png");
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      background-image: url("../img/pcb-tab.png");
+      background-size: 330px 466px;
+      background-position: right top;
+    }
   }
 
   @media (max-width: $tablet) {
     padding-top: 285px;
     margin-bottom: 37px;
     min-height: 646px;
+    background-image: url("../img/waves-desk.png");
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      background-image: url("../img/pcb-mob.png");
+      background-size: 294px 437px;
+      background-position: right top;
+    }
   }
 }
 
@@ -46,17 +59,21 @@
 }
 
 .main__layout {
-  max-width: 54%;
+  position: relative;
+  z-index: 10;
+  min-width: 54%;
   margin-right: auto;
-  // padding-bottom: 186px;
+  margin-left: 4px;
 
   @media (max-width: $desktop) {
     max-width: 68%;
     padding-bottom: 0;
+    margin-left: 64px;
   }
 
   @media (max-width: $tablet) {
     margin-right: 0;
+    margin-left: 0;
     max-width: 100%;
   }
 }
@@ -64,13 +81,15 @@
 .main h2 {
   @include font(80px, 94px, 700);
   @include fields();
-  margin-bottom: 26px;
+  margin-bottom: 28px;
+  width: auto;
   font-family: $roboto;
   text-transform: uppercase;
   letter-spacing: 0.07em;
 
   @media (max-width: $desktop) {
     @include font(60px, 70px, 700);
+    margin-bottom: 29px;
   }
 
   @media (max-width: $tablet) {
@@ -81,15 +100,16 @@
 .main p {
   @include font(22px, 34px, 400);
   @include fields();
-  margin-bottom: 40px;
+  margin-bottom: 43px;
+  max-width: 54%;
   position: relative;
-  padding-left: $main-pad-left;
+  padding-left: $main-pad-desk;
   font-family: $font;
 
   &::before {
     @include pseudo();
-    left: 2px;
-    top: 15px;
+    left: 4px;
+    top: 17px;
     width: 66px;
     height: 2px;
     background-color: $white;
@@ -97,6 +117,9 @@
 
   @media (max-width: $desktop) {
     @include font(18px, 156%, 400);
+    padding-left: $main-pad-tab;
+    margin-bottom: 54px;
+    max-width: 100%;
 
     &::before {
       width: 33px;
@@ -105,14 +128,20 @@
 
   @media (max-width: $tablet) {
     @include font(16px, 156%, 400);
+    margin-bottom: 42px;
+
+    &::before {
+      top: 14px;
+    }
   }
 }
 
 .main__button {
   @include a();
   @include font(16px, 19px, 700);
-  padding: 17px 45px;
-  margin-left: $main-pad-left;
+  padding: 18px 30px;
+  margin-left: $main-pad-desk;
+  max-width: 409px;
   background-color: $accent;
   font-family: $roboto;
   text-transform: uppercase;
@@ -128,6 +157,11 @@
   &:active {
     color: $dark;
     transition: $tr;
+  }
+
+  @media (max-width: $desktop) {
+    margin-left: $main-pad-tab;
+    max-width: 380px;
   }
 
   @media (max-width: $tablet) {
@@ -159,8 +193,8 @@
   @include a();
   @include font(14px, 16px, 400);
   position: absolute;
-  left: 0;
-  bottom: 100px;
+  left: 215px;
+  bottom: 126px;
   color: rgba($white, 0.5);
   text-align: left;
   transform: rotate(-90deg);

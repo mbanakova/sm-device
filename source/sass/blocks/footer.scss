@@ -34,14 +34,12 @@
   @media (max-width: $desktop) {
     flex-direction: row;
     margin-right: 0;
-    margin-bottom: 37px;
-    padding-bottom: 26px;
+    margin-bottom: 26px;
     align-items: center;
-    border-bottom: 1px solid rgba($bottom-line, 0.2);
   }
 
   @media (max-width: $tablet) {
-    margin-bottom: 0;
+    margin-bottom: 54px;
     flex-direction: column;
   }
 }
@@ -63,11 +61,33 @@
 }
 
 .footer__accordion {
-  @include ul();
+  position: relative;
+
+  @media (max-width: $desktop) {
+    &::before {
+      @include pseudo();
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 1px;
+      background-color: rgba($bottom-line, 0.2);
+    }
+  }
 }
 
 .footer__bottom {
-  border-top: 1px solid rgba($bottom-line, 0.2);
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: rgba($bottom-line, 0.2);
+  }
 }
 
 .footer__bottom-item {

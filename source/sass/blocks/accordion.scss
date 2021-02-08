@@ -1,4 +1,5 @@
 .accordion {
+  @include ul();
   display: flex;
   justify-content: space-between;
 
@@ -9,9 +10,22 @@
 
 .accordion__site-nav {
   margin-right: 140px;
+  position: relative;
 
   @media (max-width: $desktop) {
     margin-right: 0;
+  }
+
+  @media (max-width: $tablet) {
+    &::before {
+      @include pseudo();
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 1px;
+      background-color: rgba($bottom-line, 0.2);
+    }
   }
 }
 

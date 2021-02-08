@@ -1,6 +1,6 @@
 .header {
   @include pseudo();
-  top: 36px;
+  top: 34px;
   left: 0;
   right: 0;
   background-color: transparent;
@@ -8,18 +8,29 @@
   z-index: 999;
 
   @media (max-width: $desktop) {
-    top: 20px;
+    top: 22px;
+  }
+
+  @media (max-width: $tablet) {
+    top: 18px;
   }
 }
 
 .header__container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .header__logo {
-  margin-right: 120px;
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+  margin-left: 8px;
+
+  @media (max-width: $desktop) {
+    margin-left: 0;
+  }
 }
 
 .header__contacts {
@@ -28,11 +39,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 5px;
+  }
 }
 
 .header__contacts-item {
   padding: 10px;
-  margin-right: 60px;
+  margin-right: 66px;
 
   &:last-of-type {
     margin-right: 0;
@@ -40,6 +55,7 @@
 
   @media (max-width: $desktop) {
     margin-right: 33px;
+    padding: 0;
   }
 
   @media (max-width: $tablet) {
@@ -53,9 +69,16 @@
   align-items: center;
 }
 
+.header__contacts-link svg {
+  @media (max-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 .header__contacts-link span {
   @include a();
-  margin-left: 20px;
+  margin-left: 18px;
   color: $white;
 
   @media (max-width: $desktop) {
@@ -84,12 +107,14 @@
   @include button();
   @include font(14px, auto, 700);
   margin-left: 40px;
-  padding: 15px 30px;
+  margin-right: -4px;
+  padding: 13px 25px 12px;
   font-family: $roboto;
   background-color: transparent;
   border: 1px solid $white;
   border-radius: 5px;
   flex-shrink: 0;
+  letter-spacing: 0.05em;
 
   &:hover {
     color: $accent;
