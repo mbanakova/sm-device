@@ -8,6 +8,7 @@
   }
 
   @media (max-width: $tablet) {
+    padding-top: 0;
     flex-direction: column;
   }
 }
@@ -24,6 +25,8 @@
   }
 
   @media (max-width: $tablet) {
+    max-width: 100%;
+
     &::before {
       @include pseudo();
       bottom: 0;
@@ -37,16 +40,19 @@
 }
 
 .accordion__contacts {
-
   @media (max-width: $desktop) {
     margin-right: 10px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-right: 0;
   }
 }
 
 .accordion__input {
+  @include fields();
   appearance: none;
   position: absolute;
-  @include fields();
 }
 
 .accordion__label {
@@ -56,7 +62,7 @@
   letter-spacing: 0.05em;
 
   @media (max-width: $tablet) {
-    padding: 28px 60px 28px 0;
+    padding: 30px 60px 27px 0;
     display: block;
     position: relative;
     cursor: pointer;
@@ -114,6 +120,9 @@
   }
 
   @media (max-width: $tablet) {
+    margin-top: 5px;
+    margin-bottom: 26px;
+    max-width: 90%;
     display: none;
   }
 }
@@ -127,7 +136,7 @@
 .accordion__column {
   margin-right: 70px;
 
-  &:last-of-type{
+  &:last-of-type {
     margin-right: 0;
   }
 

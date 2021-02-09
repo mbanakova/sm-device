@@ -12,7 +12,7 @@
 }
 
 
-.form button[type=button] {
+.form button[type="button"] {
   background-color: transparent;
   width: 20px;
   height: 20px;
@@ -29,7 +29,7 @@
     left: -2px;
     transform: rotate(45deg);
     background-color: $white;
-  };
+  }
 
   &::after {
     @include pseudo();
@@ -39,7 +39,7 @@
     left: 9px;
     transform: rotate(-135deg);
     background-color: $white;
-  };
+  }
 
   &:hover {
     background-color: $white;
@@ -93,30 +93,30 @@
   grid-column-gap: 30px;
   grid-template-columns: repeat(2, calc(50% - 15px));
   grid-template-areas:
-  "name phone"
-  "textarea textarea"
-  "submit checkbox";
+    "name phone"
+    "textarea textarea"
+    "submit checkbox";
 
   .modal & {
     max-width: auto;
     grid-template-columns: 1fr;
     grid-template-areas:
-    "name"
-    "phone"
-    "textarea"
-    "submit"
-    "checkbox";
+      "name"
+      "phone"
+      "textarea"
+      "submit"
+      "checkbox";
   }
 
   @media (max-width: $tablet) {
     grid-template-columns: 1fr;
     grid-row-gap: 35px;
     grid-template-areas:
-    "name"
-    "phone"
-    "textarea"
-    "submit"
-    "checkbox";
+      "name"
+      "phone"
+      "textarea"
+      "submit"
+      "checkbox";
   }
 }
 
@@ -135,6 +135,7 @@
     color: $white;
     transition: $tr;
   }
+
   &:hover {
     border: 1px solid $white;
   }
@@ -151,11 +152,6 @@
 
   &--phone {
     grid-area: phone;
-  }
-
-  &--checkbox {
-    grid-area: checkbox;
-    position: relative;
   }
 }
 
@@ -175,7 +171,7 @@
   }
 }
 
-.form button[type=submit] {
+.form button[type="submit"] {
   @include a();
   @include button();
   @include font(14px, 16px, 700);
@@ -211,6 +207,8 @@
 }
 
 .form__input--checkbox {
+  grid-area: checkbox;
+  position: relative;
   display: flex;
   align-items: center;
   padding-left: 40px;
@@ -238,8 +236,8 @@
 }
 
 .form__input--checkbox label {
-  position: relative;
   @include font(14px, 16px, 400);
+  position: relative;
 
   &::before {
     position: absolute;
@@ -282,7 +280,6 @@
   }
 
   @media (max-width: $tablet) {
-
     &::before {
       left: -31px;
     }

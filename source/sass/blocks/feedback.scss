@@ -22,7 +22,6 @@
 }
 
 .feedback .container {
-
   @media (max-width: $tablet) {
     padding: 0;
   }
@@ -37,7 +36,6 @@
     max-width: 92%;
     margin-right: auto;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
     justify-content: center;
     position: relative;
     grid-template-columns: 1fr;
