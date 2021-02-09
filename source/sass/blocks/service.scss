@@ -69,6 +69,7 @@
   max-width: 370px;
   max-height: 620px;
   overflow: hidden;
+  position: relative;
 
   @media (max-width: $desktop) {
     max-width: 720px;
