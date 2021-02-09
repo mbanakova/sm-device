@@ -1,10 +1,14 @@
 .form {
-  padding: 33px 40px 36px;
+  padding: 33px 40px 40px;
   background-color: $accent;
   color: $white;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+
+  @media (max-width: $tablet) {
+    padding: 30px 15px 32px;
+  }
 }
 
 
@@ -53,20 +57,34 @@
   @include font(36px, 57px, 400);
   @include fields();
   margin-bottom: 2px;
+  margin-left: -5px;
+  letter-spacing: -0.01em;
   font-family: $roboto;
 
   @media (max-width: $desktop) {
     @include font(32px, 140%, 400);
+    margin-bottom: 12px;
   }
 
   @media (max-width: $tablet) {
     @include font(28px, 140%, 400);
+    letter-spacing: normal;
+    margin-bottom: 14px;
+    margin-left: 0;
   }
 }
 
 .form p {
   @include fields();
-  margin-bottom: 49px;
+  margin-bottom: 50px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 56px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 28px;
+  }
 }
 
 .form form {
@@ -92,6 +110,7 @@
 
   @media (max-width: $tablet) {
     grid-template-columns: 1fr;
+    grid-row-gap: 35px;
     grid-template-areas:
     "name"
     "phone"
@@ -105,7 +124,7 @@
 .form textarea {
   @include font(16px, 22px, 400);
   font-family: $font;
-  padding: 14px 16px;
+  padding: 13px 16px 14px;
   margin: 0;
   width: 100%;
   background-color: rgba($white, 0.1);
@@ -118,6 +137,10 @@
   }
   &:hover {
     border: 1px solid $white;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 11px 20px 12px 14px;
   }
 }
 
@@ -133,11 +156,6 @@
   &--checkbox {
     grid-area: checkbox;
     position: relative;
-    padding-left: 40px;
-  }
-
-  &--error {
-    border: 1px solid red;
   }
 }
 
@@ -145,13 +163,23 @@
   grid-area: textarea;
   resize: none;
   min-height: 154px;
+  margin-bottom: 4px;
+
+  @media (max-width: $desktop) {
+    min-height: 160px;
+  }
+
+  @media (max-width: $tablet) {
+    min-height: 105px;
+    margin-bottom: 0;
+  }
 }
 
 .form button[type=submit] {
   @include a();
   @include button();
-  @include font(16px, 19px, 700);
-  padding: 17px 45px;
+  @include font(14px, 16px, 700);
+  padding: 15px 43px;
   background-color: $accent;
   font-family: $roboto;
   text-transform: uppercase;
@@ -175,6 +203,26 @@
     @include font(14px, 16px, 400);
     padding: 15px;
   }
+
+  @media (max-width: $tablet) {
+    margin-top: -8px;
+    margin-bottom: -5px;
+  }
+}
+
+.form__input--checkbox {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+
+  @media (max-width: $desktop) {
+    margin-top: 5px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 0;
+    padding-left: 34px;
+  }
 }
 
 .form__input--checkbox input {
@@ -191,14 +239,15 @@
 
 .form__input--checkbox label {
   position: relative;
+  @include font(14px, 16px, 400);
 
   &::before {
     position: absolute;
     content: "";
-    top: 4px;
-    left: -40px;
-    height: 23px;
-    width: 23px;
+    top: 0;
+    left: -35px;
+    height: 20px;
+    width: 20px;
     border: 1px solid $white;
     border-radius: 3px;
   }
@@ -206,8 +255,8 @@
   &::after {
     position: absolute;
     content: "";
-    top: 10px;
-    left: -34px;
+    top: 4px;
+    left: -31px;
     height: 8px;
     width: 12px;
     border-left: 2px solid $white;
@@ -218,6 +267,31 @@
 
   @media (max-width: $desktop) {
     @include font(14px, 16px, 400);
+
+    &::before {
+      left: -28px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &::after {
+      width: 10px;
+      height: 6px;
+      left: -25px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    &::before {
+      left: -31px;
+    }
+
+    &::after {
+      width: 10px;
+      height: 6px;
+      left: -28px;
+    }
   }
 }
 

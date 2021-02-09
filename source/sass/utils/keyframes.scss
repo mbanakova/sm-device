@@ -1,0 +1,53 @@
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes bounceX {
+  from {
+    transform: translateX(-2px);
+  }
+  to   {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes bounceY {
+  from {
+    transform: translateY(-2px);
+  }
+  to   {
+    transform: translateY(2px);
+  }
+}

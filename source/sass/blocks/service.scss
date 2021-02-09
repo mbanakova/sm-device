@@ -1,5 +1,5 @@
 .service {
-  padding-top: 93px;
+  padding-top: 90px;
   padding-bottom: 127px;
   background-color: $dark;
   color: $white;
@@ -11,7 +11,8 @@
   }
 
   @media (max-width: $tablet) {
-    padding-bottom: 64px;
+    padding-top: 50px;
+    padding-bottom: 66px;
   }
 }
 
@@ -29,20 +30,23 @@
 }
 
 .service h2 {
-  @include font(36px, 158%, 400);
+  @include font(36px, 57px, 400);
   @include fields();
-  margin-bottom: 40px;
+  margin-bottom: 44px;
+  letter-spacing: -0.01em;
 
   @media (max-width: $desktop) {
     @include font(32px, 45px, 400);
     margin-bottom: 46px;
     max-width: 85%;
+    letter-spacing: normal;
   }
 
   @media (max-width: $tablet) {
     @include font(28px, 140%, 400);
-    max-width: auto;
-    margin-bottom: 37px;
+    max-width: 100%;
+    margin-bottom: 40px;
+    margin-left: 10px;
   }
 }
 
@@ -71,6 +75,30 @@
   overflow: hidden;
   position: relative;
 
+  &::before {
+    @include pseudo();
+    display: none;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, $accent);
+    animation: animate1 1s linear infinite;
+    animation-delay: 0s;
+  }
+
+  &::after {
+    @include pseudo();
+    display: none;
+    right: 0;
+    top: -100%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, $accent);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0s;
+  }
+
   @media (max-width: $desktop) {
     max-width: 720px;
     max-height: 256px;
@@ -79,6 +107,41 @@
       margin-left: auto; // Потому что картинка кривая и на 5п уже!!
     }
   }
+}
+
+.service__keyframes {
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    display: none;
+    bottom: 5px;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(-90deg, transparent, $accent);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0s;
+  }
+
+  &::after {
+    @include pseudo();
+    display: none;
+    left: 0;
+    bottom: -100%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(0deg, transparent, $accent);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0s;
+  }
+}
+
+.service__item:hover::before,
+.service__item:hover::after,
+.service__item:hover .service__keyframes::before,
+.service__item:hover .service__keyframes::after {
+  display: block;
 }
 
 .service__link {
@@ -133,32 +196,19 @@
   @include font(20px, 30px, 400);
   @include fields();
   position: absolute;
-  top: 50px;
-  left: 45px;
+  top: 52px;
+  left: 42px;
   text-align: left;
-  max-width: 50%;
+  max-width: 44%;
+
+  @media (max-width: $desktop) {
+    top: 40px;
+    max-width: 24%;
+  }
 
   @media (max-width: $tablet) {
-    top: 30px;
-    left: 25px;
+    top: 21px;
+    left: 35px;
     max-width: 60%;
-  }
-}
-
-@keyframes bounceX {
-  from {
-    transform: translateX(-2px);
-  }
-  to   {
-    transform: translateX(2px);
-  }
-}
-
-@keyframes bounceY {
-  from {
-    transform: translateY(-2px);
-  }
-  to   {
-    transform: translateY(2px);
   }
 }
