@@ -11,12 +11,12 @@
 }
 
 .footer__top {
-  margin-bottom: 55px;
+  margin-bottom: 54px;
   display: flex;
   justify-content: space-between;
 
   @media (max-width: $desktop) {
-    margin-bottom: 33px;
+    margin-bottom: 38px;
     flex-direction: column;
   }
 
@@ -28,11 +28,11 @@
 .footer__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-right: 100px;
+  margin-right: 30px;
 
   @media (max-width: $desktop) {
     flex-direction: row;
+    justify-content: space-between;
     margin-right: 0;
     margin-bottom: 26px;
     align-items: center;
@@ -41,6 +41,14 @@
   @media (max-width: $tablet) {
     margin-bottom: 54px;
     flex-direction: column;
+  }
+}
+
+.footer__logo {
+  margin-bottom: 54px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 0;
   }
 }
 
@@ -56,12 +64,28 @@
 
     @media (max-width: $desktop) {
       display: block;
+      margin-left: 10px;
+      margin-top: 5px;
     }
+  }
+
+  &:hover {
+    color: $accent;
+    transition: $tr;
+  }
+
+  &:active {
+    color: rgba($accent, 0.8);
+    transition: $tr;
   }
 }
 
 .footer__accordion {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-width: 70%;
+  flex-wrap: wrap;
 
   @media (max-width: $desktop) {
     &::before {
@@ -91,7 +115,17 @@
 }
 
 .footer__bottom-item {
-  padding: 14px 20px;
+  padding: 15px 0;
+  margin-right: 5%;
+
+  &--sd-bottom {
+    margin-right: 10%;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+    margin-left: auto;
+  }
 
   &--rights,
   &--sd-bottom {
@@ -99,13 +133,16 @@
       display: none;
     }
   }
+
+  @media (max-width: $desktop) {
+    padding: 20px 0;
+  }
 }
 
-.footer__legal {
+.footer__copyright {
   @include ul();
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   @media (max-width: $tablet) {
     flex-direction: column;

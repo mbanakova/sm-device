@@ -3,14 +3,21 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: $desktop) {
+    padding-top: 37px;
+  }
+
   @media (max-width: $tablet) {
     flex-direction: column;
   }
 }
 
 .accordion__site-nav {
-  margin-right: 140px;
   position: relative;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
 
   @media (max-width: $desktop) {
     margin-right: 0;
@@ -29,9 +36,17 @@
   }
 }
 
+.accordion__contacts {
+
+  @media (max-width: $desktop) {
+    margin-right: 10px;
+  }
+}
+
 .accordion__input {
   appearance: none;
   position: absolute;
+  @include fields();
 }
 
 .accordion__label {
@@ -84,14 +99,14 @@
   @include ul();
   display: flex;
   flex-direction: column;
-  margin-right: 65px;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
+  margin-top: 20px;
+  max-width: 100%;
 
   &--double {
+    margin-top: 25px;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     @media (max-width: $desktop) {
       flex-direction: column;
@@ -110,7 +125,7 @@
 }
 
 .accordion__column {
-  margin-right: 50px;
+  margin-right: 70px;
 
   &:last-of-type{
     margin-right: 0;
@@ -137,7 +152,6 @@
   @include a();
   @include font(15px, 26px, 400);
   text-align: left;
-  letter-spacing: 0.03em;
   opacity: 0.5;
 
   &:hover {
@@ -149,5 +163,9 @@
   &:active {
     opacity: 0.5;
     transition: $tr;
+  }
+
+  @media (max-width: $desktop) {
+    @include font(15px, 25px, 400);
   }
 }
