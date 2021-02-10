@@ -153,6 +153,16 @@
   &--phone {
     grid-area: phone;
   }
+
+  &--error {
+    animation: buzz 0.6s;
+    border-color: $accent;
+
+    &::placeholder {
+      color: $accent;
+      opacity: 1;
+    }
+  }
 }
 
 .form textarea {

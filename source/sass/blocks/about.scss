@@ -30,6 +30,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left 8px;
+
+    @media (min-resolution: $extra) {
+      background-image: url("../img/2005-desk@2.png");
+    }
   }
 
   @media (max-width: $desktop) {
@@ -45,6 +49,10 @@
       background-image: url("../img/2005-tab.png");
       background-size: 251px 362px;
       background-position: left top;
+
+      @media (min-resolution: $extra) {
+        background-image: url("../img/2005-tab@2.png");
+      }
     }
   }
 
