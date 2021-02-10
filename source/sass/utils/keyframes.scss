@@ -58,7 +58,6 @@
   }
 }
 
-
 @keyframes buzz {
   0%,
   100% {
@@ -78,5 +77,29 @@
   60%,
   80% {
     transform: translateX(4px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
   }
 }

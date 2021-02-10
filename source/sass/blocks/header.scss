@@ -67,6 +67,33 @@
   @include a();
   display: flex;
   align-items: center;
+  position: relative;
+
+  &::before,
+  &::after {
+    @include pseudo();
+    display: none;
+    border: 1px solid $accent;
+    width: 40px;
+    height: 40px;
+    left: -11px;
+    top: -10px;
+    border-radius: 50%;
+    animation: pulse 1.8s linear infinite;
+    transition: $tr;
+  }
+
+  &::after {
+    animation-delay: 0.8s;
+  }
+
+  @media (max-width: $desktop) {
+    &::before,
+    &::after {
+      top: -8px;
+      left: -8px;
+    }
+  }
 }
 
 .header__contacts-link svg {
@@ -86,8 +113,20 @@
   }
 }
 
+.header__contacts-link:hover {
+  &::before,
+  &::after {
+    display: block;
+  }
+}
+
 .header__contacts-link:hover span {
   color: $accent;
+  transition: $tr;
+}
+
+.header__contacts-link:hover svg {
+  animation: shake 1.8s linear infinite;
   transition: $tr;
 }
 
@@ -99,7 +138,7 @@
 
 .header__contacts-link:active svg {
   @media (max-width: $desktop) {
-    stroke: $white;
+    animation: pulse 1.8s linear infinite,  shake 1.8s linear infinite;
   }
 }
 
