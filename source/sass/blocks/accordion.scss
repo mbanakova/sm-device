@@ -49,13 +49,13 @@
   }
 }
 
-.accordion__input {
+.accordion input {
   @include fields();
   appearance: none;
   position: absolute;
 }
 
-.accordion__label {
+.accordion label {
   @include font(15px, 16px, 400);
   text-transform: uppercase;
   font-family: $roboto;

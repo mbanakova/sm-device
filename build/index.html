@@ -57,8 +57,8 @@
           <h2>Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
           <a class="main__button" href="#feedback">
-            <span class="main__span main__span--desk">Получить бесплатную консультацию</span>
-            <span class="main__span main__span--mob">Бесплатная консультация</span>
+            <span>Получить бесплатную консультацию</span>
+            <span>Бесплатная консультация</span>
           </a>
         </div>
       </div>
@@ -189,13 +189,14 @@
           <form action="https://echo.htmlacademy.ru" method="POST" id="feedback-form">
             <div class="form__input form__input--name">
               <input type="text" name="username" id="username" placeholder="Имя" required="">
-              <label for="username"></label>
+              <label for="username" aria-label="Поле для имени"></label>
             </div>
             <div class="form__input form__input--phone">
               <input type="tel" name="userphone" id="userphone" placeholder="Телефон" data-mask="+7 (000) 000-00-00" title="Введите 10 цифр" required="">
-              <label for="userphone"></label>
+              <label for="userphone" aria-label="Поле для телефона"></label>
             </div>
             <textarea name="textarea" id="textarea" placeholder="Ваш вопрос"></textarea>
+            <label for="textarea" aria-label="Поле для вопроса"></label>
             <button type="submit">Задать вопрос</button>
             <div class="form__input form__input--checkbox">
               <input type="checkbox" name="confirm" id="confirm" checked="" required="">
@@ -232,8 +233,8 @@
         </div>
         <div class="footer__accordion accordion">
           <div class="accordion__site-nav">
-            <input class="accordion__input" type="checkbox" name="site-nav" id="site-nav">
-            <label class="accordion__label" for="site-nav">Разделы сайта</label>
+            <input type="checkbox" name="site-nav" id="site-nav">
+            <label for="site-nav">Разделы сайта</label>
             <ul class="accordion__list accordion__list--double">
               <li class="accordion__column">
                 <ul class="accordion__inner-list">
@@ -253,8 +254,8 @@
             </ul>
           </div>
           <div class="accordion__contacts">
-            <input class="accordion__input" type="checkbox" name="contacts" id="contacts" checked="">
-            <label class="accordion__label" for="contacts">Наш офис</label>
+            <input type="checkbox" name="contacts" id="contacts" checked="">
+            <label for="contacts">Наш офис</label>
             <ul class="accordion__list">
               <li><a class="accordion__link" href="#">г. Мытищи, Олимпийский проспект, д.10</a></li>
               <li><a class="accordion__link" href="tel:+74955894050">+7 (495) 589-40-50</a></li>
@@ -294,13 +295,14 @@
           <form action="https://echo.htmlacademy.ru" method="POST" id="modal-form">
             <div class="form__input form__input--name">
               <input type="text" name="user-name" id="user-name" placeholder="Имя" required="">
-              <label for="user-name"></label>
+              <label for="user-name" aria-label="Поле для имени"></label>
             </div>
             <div class="form__input form__input--phone">
               <input type="tel" name="user-phone" id="user-phone" placeholder="Телефон" title="Введите 10 цифр" data-mask="+7 (000) 000-00-00" required="">
-              <label for="user-phone"></label>
+              <label for="user-phone" aria-label="Поле для телефона"></label>
             </div>
             <textarea name="text-area" id="text-area" placeholder="Ваш вопрос"></textarea>
+            <label for="text-area" aria-label="Поле для вопроса"></label>
             <button type="submit">Отправить</button>
             <div class="form__input form__input--checkbox">
               <input type="checkbox" name="confirm" id="confirm-modal" checked="" required="">
@@ -311,9 +313,9 @@
       </div>
     </div>
   </section>
-  <script>
-  </script>
-  <script src="js/main.js"></script>
+  <script src="js/main/main.js"></script>
+  <script src="js/main/mask.js"></script>
+  <script src="js/main/scroll.js"></script>
 </body>
 
 </html>

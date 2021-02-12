@@ -87,7 +87,7 @@
   }
 }
 
-.form form {
+form {
   display: grid;
   grid-row-gap: 40px;
   grid-column-gap: 30px;
@@ -98,7 +98,7 @@
     "submit checkbox";
 
   .modal & {
-    max-width: auto;
+    max-width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas:
       "name"

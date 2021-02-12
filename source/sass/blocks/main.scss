@@ -169,19 +169,19 @@
   }
 }
 
-.main__span {
+.main span {
   display: block;
 
-  &--mob {
+  &:nth-of-type(2) {  // Их мы менять местами не будем никогда
     display: none;
   }
 
   @media (max-width: $tablet) {
-    &--mob {
+    &:nth-of-type(2) {
       display: block;
     }
 
-    &--desk {
+    &:nth-of-type(1) {
       display: none;
     }
   }
