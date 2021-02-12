@@ -29,3 +29,14 @@
 .modal__container {
   max-width: 490px;
 }
+
+.modal form {
+  max-width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "phone"
+    "textarea"
+    "submit"
+    "checkbox";
+}

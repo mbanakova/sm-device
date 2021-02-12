@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-  // запись в LocalStorage
   var isStorageSupport = true;
   var storageName = '';
   var storagePhone = '';
@@ -10,20 +9,22 @@
   var form = document.querySelector('#feedback-form');
   var inputs = form.querySelectorAll('form input');
 
-  form.addEventListener('submit', function (evt) {
-    inputs.forEach(function (elem) {
-      if (!elem.value) {
-        evt.preventDefault();
-        elem.classList.remove('form__input--error');
-        elem.classList.add('form__input--error');
-      } else {
-        if (isStorageSupport) {
-          localStorage.setItem('user', userName.value);
-          localStorage.setItem('phone', userPhone.value);
+  if (form) {
+    form.addEventListener('submit', function (evt) {
+      inputs.forEach(function (elem) {
+        if (!elem.value) {
+          evt.preventDefault();
+          elem.classList.remove('form__input--error');
+          elem.classList.add('form__input--error');
+        } else {
+          if (isStorageSupport) {
+            localStorage.setItem('user', userName.value);
+            localStorage.setItem('phone', userPhone.value);
+          }
         }
-      }
+      });
     });
-  });
+  }
 
   // validateNumber(userPhone);
   try {
@@ -40,106 +41,36 @@
   }
 
   document.addEventListener('click', function () {
-    inputs.forEach(function (elem) {
-      if (elem.classList.contains('form__input--error')) {
-        elem.classList.remove('form__input--error');
-      }
-    });
+    if (inputs) {
+      inputs.forEach(function (elem) {
+        if (elem.classList.contains('form__input--error')) {
+          elem.classList.remove('form__input--error');
+        }
+      });
+    }
   });
 
-  // ------------------------ Модальное окно
-  var orderCall = document.querySelector('.header__button');
-  var modal = document.querySelector('.modal');
-  var closeModalBtn = document.querySelector('#close');
-  var overlay = document.querySelector('.modal__overlay');
-  var modalForm = document.querySelector('#modal-form');
-  var user = modalForm.querySelector('#user-name');
-  var phone = modalForm.querySelector('#user-phone');
-  var modalInputs = modalForm.querySelectorAll('input');
+  window.localstorage = {
+    storageName: storageName,
+    storagePhone: storagePhone,
+    isStorageSupport: isStorageSupport,
+    form: form
+  };
+})();
 
-  function openModal() {
-    modal.classList.add('modal--open');
-    window.onscroll = function () {
-      window.scrollTo(0, 0);
-    };
-  }
+'use strict';
 
-  function closeModal() {
-    modal.classList.remove('modal--open');
-    window.onscroll = function () {};
-  }
-
-  if (orderCall) {
-    orderCall.addEventListener('click', function () {
-      openModal();
-      if (storageName && storagePhone) {
-        if (user || phone) {
-          user.value = storageName;
-          phone.value = storagePhone;
-        }
-      } else {
-        user.focus();
-      }
+(function () {
+  var phones = document.querySelectorAll('[data-mask]');
+  if (phones) {
+    phones.forEach(function (elem) {
+      elem.addEventListener('input', function (f) {
+        showMask(f);
+      });
     });
   }
 
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', function () {
-      closeModal();
-    });
-  }
-
-  if (modal) {
-    // закрыть через Esc
-    window.addEventListener('keydown', function (evt) {
-      if (evt.key === 'Escape') {
-        if (modal.classList.contains('modal--open')) {
-          evt.preventDefault();
-          closeModal();
-        }
-      }
-    });
-    // Закрыть по клику снаружи
-    overlay.addEventListener('click', function (elem) {
-      if (elem.target === overlay && elem.target !== form) {
-        modal.classList.remove('modal--open');
-        closeModal();
-      }
-    });
-  }
-
-  if (modalInputs) {
-    modalInputs.forEach(function (elem) {
-      elem.removeAttribute('required');
-    });
-  }
-
-  modalForm.addEventListener('submit', function (evt) {
-    modalInputs.forEach(function (elem) {
-      if (!elem.value) {
-        evt.preventDefault();
-        elem.classList.remove('form__input--error');
-        elem.classList.add('form__input--error');
-      } else {
-        if (isStorageSupport) {
-          localStorage.setItem('user', user.value);
-          localStorage.setItem('phone', phone.value);
-        }
-      }
-    });
-  });
-
-  // -------------------------------- Маска телефона
-  var maskedPhones = document.querySelectorAll('[data-mask]');
-  if (maskedPhones) {
-    maskedPhones.forEach(function (elem) {
-      elem.addEventListener('input', showMask);
-    });
-  }
-
-  function showMask() {
-    // eslint-disable-next-line no-invalid-this
-    var input = this;
+  function showMask(input) {
     var mask = input.dataset.mask;
     var value = input.value;
     var literalPattern = /[0\*]/;
@@ -175,14 +106,107 @@
 
       input.value = newValue;
     } catch (event) {
-      maskedPhones.removeEventListener();
+      phones.removeEventListener();
       input.classList.remove('form__input--error');
       input.classList.add('form__input--error');
     }
   }
+})();
 
-  // ------------------------ Скролл
+'use strict';
 
+(function () {
+  var orderCall = document.querySelector('.header__button');
+  var modal = document.querySelector('.modal');
+  var closeModalBtn = document.querySelector('#close');
+  var overlay = document.querySelector('.modal__overlay');
+  var modalForm = document.querySelector('#modal-form');
+  var user = modalForm.querySelector('#user-name');
+  var phone = modalForm.querySelector('#user-phone');
+  var modalInputs = modalForm.querySelectorAll('input');
+
+  function openModal() {
+    if (modal) {
+      modal.classList.add('modal--open');
+      window.onscroll = function () {
+        window.scrollTo(0, 0);
+      };
+    }
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.remove('modal--open');
+      window.onscroll = function () {};
+    }
+  }
+
+  if (orderCall) {
+    orderCall.addEventListener('click', function () {
+      openModal();
+      if (window.localstorage.storageName && window.localstorage.storagePhone) {
+        if (user || phone) {
+          user.value = window.localstorage.storageName;
+          phone.value = window.localstorage.storagePhone;
+        }
+      } else {
+        user.focus();
+      }
+    });
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function () {
+      closeModal();
+    });
+  }
+
+  if (modal) {
+  // закрыть через Esc
+    window.addEventListener('keydown', function (evt) {
+      if (evt.key === 'Escape') {
+        if (modal.classList.contains('modal--open')) {
+          evt.preventDefault();
+          closeModal();
+        }
+      }
+    });
+    // Закрыть по клику снаружи
+    overlay.addEventListener('click', function (elem) {
+      if (elem.target === overlay && elem.target !== window.localstorage.form) {
+        modal.classList.remove('modal--open');
+        closeModal();
+      }
+    });
+  }
+
+  if (modalInputs) {
+    modalInputs.forEach(function (elem) {
+      elem.removeAttribute('required');
+    });
+  }
+
+  if (modalForm) {
+    modalForm.addEventListener('submit', function (evt) {
+      modalInputs.forEach(function (elem) {
+        if (!elem.value) {
+          evt.preventDefault();
+          elem.classList.remove('form__input--error');
+          elem.classList.add('form__input--error');
+        } else {
+          if (window.localstorage.isStorageSupport) {
+            localStorage.setItem('user', user.value);
+            localStorage.setItem('phone', phone.value);
+          }
+        }
+      });
+    });
+  }
+})();
+
+'use strict';
+
+(function () {
   var featuresLink = document.querySelector('.main__link');
   var featuresSection = document.querySelector('#features');
   var feedbackLink = document.querySelector('.main__button');

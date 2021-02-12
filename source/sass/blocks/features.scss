@@ -55,7 +55,7 @@
   @media (max-width: $tablet) {
     padding: 25px 14px 23px 26px;
 
-    &:nth-child(2) { //
+    &:nth-child(2) { // Иначе текст переносится на мобилке
       padding-right: 10px;
     }
   }

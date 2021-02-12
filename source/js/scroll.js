@@ -24,11 +24,4 @@
       scroll(feedbackSection);
     });
   }
-
-  window.scroll = {
-    featuresLink: featuresLink,
-    featuresSection: featuresSection,
-    feedbackLink: feedbackLink,
-    feedbackSection: feedbackSection
-  };
 })();

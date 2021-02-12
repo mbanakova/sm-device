@@ -138,7 +138,7 @@
 
 .header__contacts-link:active svg {
   @media (max-width: $desktop) {
-    animation: pulse 1.8s linear infinite,  shake 1.8s linear infinite;
+    animation: pulse 1.8s linear infinite, shake 1.8s linear infinite;
   }
 }
 

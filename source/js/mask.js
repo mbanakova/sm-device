@@ -1,16 +1,16 @@
 'use strict';
 
 (function () {
-  var maskedPhones = document.querySelectorAll('[data-mask]');
-  if (maskedPhones) {
-    maskedPhones.forEach(function (elem) {
-      elem.addEventListener('input', showMask);
+  var phones = document.querySelectorAll('[data-mask]');
+  if (phones) {
+    phones.forEach(function (elem) {
+      elem.addEventListener('input', function (f) {
+        showMask(f);
+      });
     });
   }
 
-  function showMask() {
-    // eslint-disable-next-line no-invalid-this
-    var input = this;
+  function showMask(input) {
     var mask = input.dataset.mask;
     var value = input.value;
     var literalPattern = /[0\*]/;
@@ -46,10 +46,9 @@
 
       input.value = newValue;
     } catch (event) {
-      maskedPhones.removeEventListener();
+      phones.removeEventListener();
       input.classList.remove('form__input--error');
       input.classList.add('form__input--error');
     }
   }
-
 })();

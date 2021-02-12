@@ -85,6 +85,7 @@
   100% {
     transform: rotate(-10deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
@@ -95,9 +96,11 @@
     transform: scale(0.7);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: scale(1.2);
     opacity: 0;
