@@ -134,6 +134,14 @@ form {
   }
 }
 
+.form label {
+  appearance: none;
+  position: absolute;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
 .form__input {
   &--name {
     grid-area: name;

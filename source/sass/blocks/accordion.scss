@@ -145,7 +145,7 @@
   }
 }
 
-.accordion__input:checked ~ .accordion__list {
+.accordion input:checked ~ .accordion__list {
   @media (max-width: $tablet) {
     display: block;
     transform: translateY(0%);
@@ -153,7 +153,7 @@
   }
 }
 
-.accordion__input:checked ~ .accordion__label::after {
+.accordion input:checked ~ label::after {
   display: none;
 }
 

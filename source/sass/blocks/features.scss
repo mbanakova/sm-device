@@ -7,6 +7,10 @@
     padding-top: 0;
     margin-bottom: 60px;
   }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 62px;
+  }
 }
 
 .features__list {
@@ -21,12 +25,13 @@
   @media (max-width: $desktop) {
     padding-top: 54px;
     grid-template-columns: repeat(2, calc(50% - 15px));
+    grid-row-gap: 34px;
   }
 
   @media (max-width: $tablet) {
     padding-top: 37px;
     grid-template-columns: 1fr;
-    grid-gap: 20px;
+    grid-gap: 21px;
   }
 }
 

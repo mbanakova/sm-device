@@ -64,13 +64,14 @@
   var phones = document.querySelectorAll('[data-mask]');
   if (phones) {
     phones.forEach(function (elem) {
-      elem.addEventListener('input', function (f) {
-        showMask(f);
+      elem.addEventListener('input', function (event) {
+        showMask(event);
       });
     });
   }
 
-  function showMask(input) {
+  function showMask(event) {
+    var input = event.target;
     var mask = input.dataset.mask;
     var value = input.value;
     var literalPattern = /[0\*]/;
@@ -105,7 +106,7 @@
       }
 
       input.value = newValue;
-    } catch (event) {
+    } catch (evt) {
       phones.removeEventListener();
       input.classList.remove('form__input--error');
       input.classList.add('form__input--error');
