@@ -7,7 +7,7 @@
   var userName = document.querySelector('#username');
   var userPhone = document.querySelector('#userphone');
   var form = document.querySelector('#feedback-form');
-  var inputs = form.querySelectorAll('form input');
+  var inputs = document.querySelectorAll('form input');
 
   if (form) {
     form.addEventListener('submit', function (evt) {
@@ -122,9 +122,9 @@
   var closeModalBtn = document.querySelector('#close');
   var overlay = document.querySelector('.modal__overlay');
   var modalForm = document.querySelector('#modal-form');
-  var user = modalForm.querySelector('#user-name');
-  var phone = modalForm.querySelector('#user-phone');
-  var modalInputs = modalForm.querySelectorAll('input');
+  var user = document.querySelector('#user-name');
+  var phone = document.querySelector('#user-phone');
+  var modalInputs = document.querySelectorAll('input');
 
   function openModal() {
     if (modal) {
@@ -223,12 +223,16 @@
 
   if (featuresLink) {
     featuresLink.addEventListener('click', function () {
-      scroll(featuresSection);
+      if (featuresSection) {
+        scroll(featuresSection);
+      }
     });
   }
   if (feedbackLink) {
     feedbackLink.addEventListener('click', function () {
-      scroll(feedbackSection);
+      if (feedbackSection) {
+        scroll(feedbackSection);
+      }
     });
   }
 })();

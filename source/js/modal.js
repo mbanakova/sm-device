@@ -6,9 +6,9 @@
   var closeModalBtn = document.querySelector('#close');
   var overlay = document.querySelector('.modal__overlay');
   var modalForm = document.querySelector('#modal-form');
-  var user = modalForm.querySelector('#user-name');
-  var phone = modalForm.querySelector('#user-phone');
-  var modalInputs = modalForm.querySelectorAll('input');
+  var user = document.querySelector('#user-name');
+  var phone = document.querySelector('#user-phone');
+  var modalInputs = document.querySelectorAll('input');
 
   function openModal() {
     if (modal) {

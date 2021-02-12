@@ -16,12 +16,16 @@
 
   if (featuresLink) {
     featuresLink.addEventListener('click', function () {
-      scroll(featuresSection);
+      if (featuresSection) {
+        scroll(featuresSection);
+      }
     });
   }
   if (feedbackLink) {
     feedbackLink.addEventListener('click', function () {
-      scroll(feedbackSection);
+      if (feedbackSection) {
+        scroll(feedbackSection);
+      }
     });
   }
 })();

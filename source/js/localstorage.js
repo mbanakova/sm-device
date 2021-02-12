@@ -7,7 +7,7 @@
   var userName = document.querySelector('#username');
   var userPhone = document.querySelector('#userphone');
   var form = document.querySelector('#feedback-form');
-  var inputs = form.querySelectorAll('form input');
+  var inputs = document.querySelectorAll('form input');
 
   if (form) {
     form.addEventListener('submit', function (evt) {
