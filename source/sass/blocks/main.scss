@@ -37,7 +37,7 @@
   }
 
   @media (max-width: $tablet) {
-    padding-top: 285px;
+    padding-top: 286px;
     min-height: 646px;
     background-image: url("../img/waves-desk.png");
     background-size: cover;
@@ -60,11 +60,13 @@
   z-index: 10;
   min-width: 54%;
   margin-right: auto;
+  margin-bottom: 127px;
 
   @media (max-width: $desktop) {
     max-width: 68%;
     padding-bottom: 0;
     margin-left: 64px;
+    margin-bottom: 0;
   }
 
   @media (max-width: $tablet) {
@@ -190,13 +192,12 @@
 .main__link {
   @include a();
   @include font(14px, 16px, 400);
-  position: absolute;
-  left: 215px;
-  bottom: 126px;
   color: rgba($white, 0.5);
   text-align: left;
   transform: rotate(-90deg);
-  z-index: 900;
+  display: inline-block;
+  margin-left: -42px;
+  padding: 5px;
 
   &:hover {
     color: $accent;

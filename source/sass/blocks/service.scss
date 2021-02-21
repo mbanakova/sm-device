@@ -25,7 +25,7 @@
   }
 
   @media (max-width: $tablet) {
-    max-width: 290px;
+    max-width: 100%;
   }
 }
 
@@ -107,6 +107,14 @@
       margin-left: auto; // Потому что картинка кривая и на 5п уже!!
     }
   }
+
+  @media (max-width: $tablet) {
+    max-height: unset;
+
+    &:first-of-type {
+      margin: 0;
+    }
+  }
 }
 
 .service__keyframes {
@@ -134,6 +142,12 @@
     background: linear-gradient(0deg, transparent, $accent);
     animation: animate4 1s linear infinite;
     animation-delay: 0s;
+  }
+
+  @media (max-width: $tablet) {
+    &::before {
+      bottom: 0;
+    }
   }
 }
 
@@ -172,6 +186,17 @@
   &:hover::after {
     animation: bounceX 0.3s alternate ease infinite;
   }
+
+
+  @media (max-width: $tablet) {
+    &:hover::before {
+      bottom: 0;
+    }
+
+    &:hover::after {
+      bottom: 27px;
+    }
+  }
 }
 
 .service__link img {
@@ -182,6 +207,12 @@
   @media (max-width: $desktop) {
     max-width: 720px;
     max-height: 256px;
+  }
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    height: auto;
+    max-height: unset;
   }
 }
 

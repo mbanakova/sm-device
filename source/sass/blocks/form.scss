@@ -245,6 +245,7 @@
 .form__input--checkbox label {
   @include font(14px, 16px, 400);
   position: relative;
+  cursor: pointer;
 
   &::before {
     position: absolute;

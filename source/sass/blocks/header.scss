@@ -12,7 +12,7 @@
   }
 
   @media (max-width: $tablet) {
-    top: 18px;
+    top: 16px;
   }
 }
 
@@ -26,7 +26,6 @@
   display: flex;
   align-items: center;
   margin-right: 60px;
-  // margin-left: 8px;
 
   @media (max-width: $desktop) {
     margin-left: 0;
@@ -42,6 +41,10 @@
 
   @media (max-width: $desktop) {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 0;
   }
 }
 
@@ -59,7 +62,7 @@
   }
 
   @media (max-width: $tablet) {
-    margin-right: 23px;
+    margin-right: 10px;
   }
 }
 
@@ -92,6 +95,16 @@
     &::after {
       top: -8px;
       left: -8px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: 5px;
+
+    &::before,
+    &::after {
+      top: -3px;
+      left: -3px;
     }
   }
 }
