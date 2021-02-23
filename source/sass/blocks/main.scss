@@ -138,9 +138,9 @@
 .main__button {
   @include a();
   @include font(16px, 19px, 700);
-  padding: 18px 30px;
+  padding: 18px 45px;
   margin-left: $main-pad-desk;
-  max-width: 409px;
+  width: max-content;
   background-color: $accent;
   color: $white;
   font-family: $roboto;
@@ -160,6 +160,7 @@
   }
 
   @media (max-width: $desktop) {
+    padding: 18px 30px;
     margin-left: $main-pad-tab;
     max-width: 380px;
   }

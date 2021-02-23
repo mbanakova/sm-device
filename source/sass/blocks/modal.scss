@@ -10,6 +10,10 @@
     z-index: 999;
     background-color: rgba($black, 0.5);
   }
+
+  &--nojs {
+    display: block;
+  }
 }
 
 .modal__overlay {

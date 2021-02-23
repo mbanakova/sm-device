@@ -51,8 +51,14 @@
 
 .accordion input {
   @include fields();
+  // appearance: none;
+  // position: absolute;
+  display: none;
+}
+
+.accordion input:not([type=checkbox]):not([type=radio]),
+.accordion textarea {
   appearance: none;
-  position: absolute;
 }
 
 .accordion label {

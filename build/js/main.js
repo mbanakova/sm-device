@@ -126,6 +126,11 @@
   var phone = document.querySelector('#user-phone');
   var modalInputs = document.querySelectorAll('input');
 
+  if (orderCall) {
+    orderCall.setAttribute('href', '#');
+    orderCall.removeAttribute('target');
+  }
+
   function openModal() {
     if (modal) {
       modal.classList.add('modal--open');

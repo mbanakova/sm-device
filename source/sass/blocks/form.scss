@@ -14,8 +14,8 @@
 
 .form button[type="button"] {
   background-color: transparent;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   align-self: flex-end;
   position: relative;
@@ -25,8 +25,8 @@
     @include pseudo();
     width: 24px;
     height: 2px;
-    top: 9px;
-    left: -2px;
+    top: 19px;
+    left: 8px;
     transform: rotate(45deg);
     background-color: $white;
   }
@@ -35,20 +35,15 @@
     @include pseudo();
     width: 2px;
     height: 24px;
-    top: -2px;
-    left: 9px;
+    top: 8px;
+    left: 18px;
     transform: rotate(-135deg);
     background-color: $white;
   }
 
   &:hover {
-    background-color: $white;
-
-    &::before,
-    &::after {
-      background-color: $accent;
-      transition: $tr;
-    }
+    // background-color: $white;
+    box-shadow: 0 0 0 2px $white;
     transition: $tr;
   }
 }
@@ -182,7 +177,7 @@
   @include a();
   @include button();
   @include font(14px, 16px, 700);
-  padding: 15px 43px;
+  padding: 14px 43px;
   background-color: $accent;
   font-family: $roboto;
   text-transform: uppercase;

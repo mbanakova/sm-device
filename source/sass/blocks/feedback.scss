@@ -1,13 +1,8 @@
 .feedback {
   padding-top: 60px;
-  padding-bottom: 70px;
+  padding-bottom: 72px;
   background-color: $accent;
   color: $white;
-  position: relative;
-  background-image: url("../img/airplane-desk.png");
-  background-size: 35% auto;
-  background-repeat: no-repeat;
-  background-position: 14% center;
 
   @media (max-width: $desktop) {
     padding-top: 50px;
@@ -22,26 +17,44 @@
 }
 
 .feedback .container {
+  display: flex;
+  justify-content: space-between;
+
   @media (max-width: $tablet) {
     padding: 0;
   }
 }
 
+.feedback img {
+  flex-shrink: 1;
+  position: relative;
+  right: 60px;
+  top: 34px;
+
+  @media (max-width: $desktop) {
+    display: none;
+  }
+}
+
 .feedback__form {
   margin-right: 80px;
-  margin-left: auto;
-  max-width: 46%;
+  max-width: 650px;
+  flex-shrink: 0;
 
   @media (max-width: $desktop) {
     max-width: 92%;
     margin-right: auto;
+    margin-left: auto;
     display: grid;
     justify-content: center;
     position: relative;
     grid-template-columns: 1fr;
+    flex-grow: 1;
   }
 
   @media (max-width: $tablet) {
     max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
