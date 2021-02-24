@@ -8,37 +8,26 @@
   var userPhone = document.querySelector('#userphone');
   var form = document.querySelector('#feedback-form');
   var inputs = document.querySelectorAll('form input');
+  var validLength = 18;
 
   if (form) {
     form.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-      inputs.forEach(function (elem) {
-        if (!elem.value) {
-          elem.classList.remove('form__input--error');
-          elem.classList.add('form__input--error');
-        } else {
-          if (isStorageSupport) {
-            localStorage.setItem('user', userName.value);
-            localStorage.setItem('phone', userPhone.value);
-          }
+      if (!userName.value || !userPhone.value || (userPhone.value.length !== validLength)) {
+        evt.preventDefault();
+      } else {
+        if (isStorageSupport) {
+          localStorage.setItem('user', userName.value);
+          localStorage.setItem('phone', userPhone.value);
         }
-      });
-      evt.target.submit();
+      }
     });
   }
 
-  // validateNumber(userPhone);
   try {
     storageName = localStorage.getItem('user');
     storagePhone = localStorage.getItem('phone');
   } catch (err) {
     isStorageSupport = false;
-  }
-
-  if (inputs) {
-    inputs.forEach(function (elem) {
-      elem.removeAttribute('required');
-    });
   }
 
   document.addEventListener('click', function () {
@@ -51,10 +40,11 @@
     }
   });
 
-  window.localstorage = {
+  window.form = {
     storageName: storageName,
     storagePhone: storagePhone,
     isStorageSupport: isStorageSupport,
-    form: form
+    form: form,
+    validLength: validLength
   };
 })();

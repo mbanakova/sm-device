@@ -2,6 +2,7 @@
 
 (function () {
   var phones = document.querySelectorAll('[data-mask]');
+
   if (phones) {
     phones.forEach(function (elem) {
       elem.addEventListener('input', function (event) {
@@ -48,8 +49,8 @@
       input.value = newValue;
     } catch (evt) {
       phones.removeEventListener();
-      input.classList.remove('form__input--error');
-      input.classList.add('form__input--error');
+      // input.classList.remove('form__input--error');
+      // input.classList.add('form__input--error');
     }
   }
 })();

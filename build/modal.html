@@ -18,9 +18,18 @@
 
 <body>
   <section class="modal modal--nojs">
-    <div class="modal__overlay">
+    <a class="logo modal__logo" href="index.html">
+      <svg width="52" height="52" role="img" aria-label="Логотип">
+        <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+      </svg>
+      <div class="logo__text">
+        <svg width="134" height="45" role="img" aria-label="Название">
+          <use xlink:href="img/sprite_auto.svg#icon-logo-text"></use>
+        </svg>
+      </div>
+    </a>
       <div class="modal__container">
-        <div class="form">
+        <div class="form modal__form">
           <h2>Закажите звонок</h2>
           <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
           <form class="form__field" action="https://echo.htmlacademy.ru" method="POST" id="modal-form">
@@ -42,7 +51,6 @@
           </form>
         </div>
       </div>
-    </div>
   </section>
 </body>
 

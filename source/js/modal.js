@@ -8,7 +8,6 @@
   var modalForm = document.querySelector('#modal-form');
   var user = document.querySelector('#user-name');
   var phone = document.querySelector('#user-phone');
-  var modalInputs = document.querySelectorAll('input');
 
   if (orderCall) {
     orderCall.setAttribute('href', '#');
@@ -27,17 +26,17 @@
   function closeModal() {
     if (modal) {
       modal.classList.remove('modal--open');
-      window.onscroll = function () {};
+      window.onscroll = function () { };
     }
   }
 
   if (orderCall) {
     orderCall.addEventListener('click', function () {
       openModal();
-      if (window.localstorage.storageName && window.localstorage.storagePhone) {
+      if (window.form.storageName && window.form.storagePhone) {
         if (user || phone) {
-          user.value = window.localstorage.storageName;
-          phone.value = window.localstorage.storagePhone;
+          user.value = window.form.storageName;
+          phone.value = window.form.storagePhone;
         }
       } else {
         user.focus();
@@ -52,7 +51,7 @@
   }
 
   if (modal) {
-  // закрыть через Esc
+    // закрыть через Esc
     window.addEventListener('keydown', function (evt) {
       if (evt.key === 'Escape') {
         if (modal.classList.contains('modal--open')) {
@@ -63,35 +62,23 @@
     });
     // Закрыть по клику снаружи
     overlay.addEventListener('click', function (elem) {
-      if (elem.target === overlay && elem.target !== window.localstorage.form) {
+      if (elem.target === overlay && elem.target !== window.form.form) {
         modal.classList.remove('modal--open');
         closeModal();
       }
     });
   }
 
-  if (modalInputs) {
-    modalInputs.forEach(function (elem) {
-      elem.removeAttribute('required');
-    });
-  }
-
   if (modalForm) {
     modalForm.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-      modalInputs.forEach(function (elem) {
-
-        if (!elem.value) {
-          elem.classList.remove('form__input--error');
-          elem.classList.add('form__input--error');
-        } else {
-          if (window.localstorage.isStorageSupport) {
-            localStorage.setItem('user', user.value);
-            localStorage.setItem('phone', phone.value);
-          }
+      if (!user.value || !phone.value || (phone.value.length !== window.form.validLength)) {
+        evt.preventDefault();
+      } else {
+        if (window.form.isStorageSupport) {
+          localStorage.setItem('user', user.value);
+          localStorage.setItem('phone', phone.value);
         }
-      });
-      evt.target.submit();
+      }
     });
   }
 })();

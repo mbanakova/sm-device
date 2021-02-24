@@ -12,7 +12,12 @@
   }
 
   &--nojs {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $dark;
+    height: 100vh;
+    padding: 40px;
   }
 }
 
@@ -43,4 +48,39 @@
     "textarea"
     "submit"
     "checkbox";
+}
+
+.modal__logo {
+  align-self: flex-start;
+}
+
+.modal__form {
+  padding-bottom: 36px;
+}
+
+.modal__form h2 {
+  @include font(28px, 140%, 400);
+  margin-bottom: 14px;
+}
+
+.modal__form p {
+  margin-bottom: 28px;
+  padding-right: 40px;
+}
+
+.modal__form textarea {
+  height: 104px;
+  min-height: unset;
+}
+
+.modal__form .form__field {
+  grid-row-gap: 30px;
+}
+
+.modal__form .form__input {
+  @include font(16px, 134%, 400);
+}
+
+.modal__form .form__input--checkbox {
+  padding-right: 40px;
 }
