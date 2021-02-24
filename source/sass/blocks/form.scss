@@ -42,7 +42,6 @@
   }
 
   &:hover {
-    // background-color: $white;
     box-shadow: 0 0 0 2px $white;
     transition: $tr;
   }
@@ -223,6 +222,11 @@
     margin-top: 0;
     padding-left: 34px;
   }
+
+  &:hover {
+    outline: 1px solid $white;
+    transition: $tr;
+  }
 }
 
 .form__input--checkbox input {
@@ -298,4 +302,9 @@
 .form__input--checkbox input:checked + label::after {
   /* Чекбокс активный */
   display: block;
+}
+
+.form__input input:not([type=checkbox]):not([type=radio]),
+.form__input textarea {
+  appearance: none;
 }

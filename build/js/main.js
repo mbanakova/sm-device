@@ -11,9 +11,9 @@
 
   if (form) {
     form.addEventListener('submit', function (evt) {
+      evt.preventDefault();
       inputs.forEach(function (elem) {
         if (!elem.value) {
-          evt.preventDefault();
           elem.classList.remove('form__input--error');
           elem.classList.add('form__input--error');
         } else {
@@ -23,6 +23,7 @@
           }
         }
       });
+      evt.target.submit();
     });
   }
 
@@ -194,9 +195,10 @@
 
   if (modalForm) {
     modalForm.addEventListener('submit', function (evt) {
+      evt.preventDefault();
       modalInputs.forEach(function (elem) {
+
         if (!elem.value) {
-          evt.preventDefault();
           elem.classList.remove('form__input--error');
           elem.classList.add('form__input--error');
         } else {
@@ -206,6 +208,7 @@
           }
         }
       });
+      evt.target.submit();
     });
   }
 })();
