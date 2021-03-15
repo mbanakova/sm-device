@@ -1,7 +1,7 @@
 .main {
-  // min-height: 100vh;
+  min-height: 100vh;
   position: relative;
-  min-height: 878px;
+  // min-height: 878px;
   padding-top: 315px;
   background-color: $dark;
   background-image: url("../img/waves-desk.png");
@@ -193,6 +193,8 @@
 .main__link {
   @include a();
   @include font(14px, 16px, 400);
+  position: relative;
+  z-index: 20;
   color: rgba($white, 0.5);
   text-align: left;
   transform: rotate(-90deg);
